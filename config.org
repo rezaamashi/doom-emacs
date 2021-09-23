@@ -1,0 +1,6 @@
+#+TITLE: Reza's Personal Emacs Configuration
+#+AUTHOR: Reza A'masyi
+#+EMAIL: mnurrreza@gmail.com
+#+STARTUP: fold
+# #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+PROPERTY: header-args :emacs-lisp :tangle config.el :mkdirp yes
