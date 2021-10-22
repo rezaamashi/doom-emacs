@@ -1,0 +1,37 @@
+#+TITLE: The RSS News
+
+* Root                                                               :elfeed:
+
+** Skim                                                               :skim:
+
+*** Berita                                                         :berita:
+
+**** https://www.jawapos.com/nasional/rss
+
+**** https://lapi.kumparan.com/v2.0/rss/
+
+**** https://www.vice.com/id_id/rss
+
+*** News                                                             :news:
+
+
+**** https://www.abc.net.au/news/feed/52278/rss.xml
+
+**** http://feeds.feedburner.com/time/world
+
+**** https://www.vox.com/rss/world/index.xml
+
+**** https://rss.cnn.com/rss/edition.rss
+
+**** https://rss.cnn.com/rss/edition_asia.rss
+
+*** Nouvelles                                                   :nouvelles:
+
+
+*** Security                                                     :security:
+
+**** https://www.thecipherbrief.com/feed
+
+** Youtube
+
+** Reddit

@@ -1,0 +1,24 @@
+#+CREATED: %U
+#+LAST_MODIFIED: %U
+#+STARTUP: content
+#+FILETAGS: Book
+
+- tags :: %^{tags}
+  
+* Cover
+[[file:%^{cover}]]
+
+* Overview
+%^{note}
+
+* Notes
+:PROPERTIES:
+:CUSTOM_ID: %^{citekey}
+:URL: %^{url}
+:AUTHOR: %^{author-or-editor}
+:NOTER_DOCUMENT: %^{file}
+:YEAR: %^{year}
+:PUBLISHER: %^{publisher}
+:VOLUME: %^{volume}
+:ISBN: %^{isbn}
+:END:

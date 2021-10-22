@@ -1,0 +1,8 @@
+# key: cr
+# name: copyright
+# --
+##########################
+# Author: ${1:Reza A'masyi}
+# Filename: `(file-name-nondirectory (buffer-file-name))`
+# Copyright `(format-time-string "%Y")` $1
+##########################

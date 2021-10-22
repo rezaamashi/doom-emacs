@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name:exportIsAuth
+# key:ut
+# --
+export const isAuth = ($1) => {$2
+
+}

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name:with-eval-after-load
+# key:/evalafter
+# --
+(with-eval-after-load '${1:Mode with hook}
+    $2)

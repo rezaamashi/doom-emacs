@@ -1,0 +1,24 @@
+#+CREATED: %U
+#+LAST_MODIFIED: %U
+#+STARTUP: content
+#+FILETAGS: Article
+
+- keywords :: %^{keywords}
+  
+* Abstract
+%^{abstract}
+
+* Notes
+:PROPERTIES:
+:CUSTOM_ID: %^{citekey}
+:NOTER_DOCUMENT: %^{file}
+:AUTHOR: %^{author-or-editor}
+:JOURNAL: %^{journal}
+:PUBLISHER: %^{publisher}
+:VOLUME: %^{volume}
+:PAGES: %^{pages}
+:YEAR: %^{year}
+:DOI: %^{doi}
+:ISSN: %^{issn}
+:URL: %^{url}
+:END:

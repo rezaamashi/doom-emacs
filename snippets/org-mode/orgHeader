@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: Org Header
+# key: /head
+# --
+#+TITLE: ${1:`(file-name-base (buffer-file-name))`}
+#+AUTHOR: ${2:`(user-full-name)`}
+#+DATE: `(format-time-string "%A, %d %B %Y")`
+
+* ${3:HEADER 1}

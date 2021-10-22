@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name:sprintTemplate
+# key:/spr
+# --
+#+TITLE: Sprint: $1
+#+AUTHOR: `(user-full-name)`
+#+EMAIL: `(user-mail-address)`
+#+DATE: `(format-time-string "%A, %d %B %Y")`
+
+Notes and resolution of work issues during the '$1' sprint.
+
+* Work Issues
+
+$2
+
+* Meeting Notes
+
+* Daily Scrum Status
+
+* Sprint Demonstration
+
+* Notes for the Next Sprint

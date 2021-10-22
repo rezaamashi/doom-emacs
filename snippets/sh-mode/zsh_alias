@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: zsh_alias
+# key: \zal
+# --
+
+alias ${1:ALIAS_NAME}="$2"

@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name:bookBib
+# key:/bo
+# --
+@book{$3$4,
+author = {${3:lastName}, ${2:firstName}},
+publisher = {${4:publisher}},
+address = {${5:city}},
+title = {{${1:title}}},
+year = {${4:year}}
+}

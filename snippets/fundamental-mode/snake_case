@@ -1,0 +1,5 @@
+# key: /snake
+# name: snake_case
+# --
+# $1
+${1:$(downcase(replace-regexp-in-string " " "_" yas-text))}

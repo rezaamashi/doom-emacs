@@ -1,0 +1,10 @@
+# key: /blhugo
+# name: bloghugo
+# --
+#+TITLE: ${1:Post title}
+#+AUTHOR: ${2:Post author}
+#+LAST_MODIFIED: [`(format-time-string "%Y-%m-%d %a %H:%M")`]
+#+CATEGORIES[]: emacs hugo org-mode
+#+DRAFT: true
+#+VARIABLE: ${3:value}
+#+LIST[]: value_1 value_2 value_3

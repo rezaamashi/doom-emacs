@@ -1,0 +1,5 @@
+* TODO Send Mail to %^{Email-to} about %^{What is the Subject}              :email:
+DEADLINE: %^{Before}T
+%T
+%a                                                  
+%i

@@ -1,0 +1,5 @@
+* TODO Read Later from %:fromname                                     :email:
+DEADLINE: %^{Deadline}T
+%T
+%a                                                  
+%i

@@ -1,0 +1,10 @@
+#+CREATED: %U
+#+LAST_MODIFIED: %U
+#+STARTUP: content
+#+FILETAGS: People
+
+- keywords :: %?
+
+* Tasks
+
+* Biography

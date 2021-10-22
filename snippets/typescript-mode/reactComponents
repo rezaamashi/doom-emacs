@@ -1,0 +1,12 @@
+# key: /rh
+# name: reactComponents
+# --
+import React from 'react'
+
+interface ${1:TM_FILENAME_BASE}Props {
+$2
+}
+
+ export const $1: React.FC<$1Props> = ({$3}) => {
+   return ($4);
+}

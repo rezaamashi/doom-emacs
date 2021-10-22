@@ -1,0 +1,7 @@
+* TODO Follow Up with %:fromname on %:subject                         :email:
+DEADLINE: %^{Deadline}T
+%T
+%a
+%i
+ 
+

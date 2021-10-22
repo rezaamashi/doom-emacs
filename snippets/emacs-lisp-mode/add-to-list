@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name:add-to-list
+# key:/addlist
+# --
+(add-to-list '${1:listName}
+    '(($2:listItems)))

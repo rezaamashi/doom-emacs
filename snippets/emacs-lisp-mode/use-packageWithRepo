@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name:use-package with straight
+# key:/ust
+# --
+(use-package ${1:Package Name}
+  :straight ($1 :type ${2:git} :host ${3:github} :repo "${4:repo}"))

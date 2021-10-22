@@ -1,0 +1,41 @@
+* %<%I:%M %p> - Morning Entry
+Good Morning, %n.
+I'm sure you're ready to jump-start your day? Nice. Now let's start it right by filling in these checkboxes
+
+** I am grateful for... 🍀                                       :gratitude:
+1. %?
+
+** TODO Daily Review [0/4]
+
+*** TODO Take A Deep Breath [0/4]
+   - [ ] Fill in the gratitude journal
+   - [ ] Ergonomic stretch
+   - [ ] Wim Hof Breath
+   - [ ] Zixia Method Meditation
+   - [ ] Make bed meditatively and 5 min clean
+   - [ ] Yesterday's journal if not done
+
+*** TODO Get Clear [0/8]
+   - [ ] Get "IN" to Zero
+     + [[file:../Orgzly/inbox.org][inbox.org ]]
+   - [ ] Empty Your Head: New projects, tasks, waiting-fors, someday/maybes?
+     + [[file:../Orgzly/projects.org][projects.org ]]
+     + [[file:../Orgzly/waiting.org][waiting.org ]]
+   - [ ] Set up next.org
+     + [[file:../Orgzly/next.org][next.org ]]
+     + [[file:../Orgzly/future.org][future.org ]]
+     + [[file:../Orgzly/reading_list.org][reading_lists.org ]]
+   - [ ] Put on this week's album
+     + [[file:./albums/%<%Y-%V_%b>-album_of_the_week.org][Album of the Week]]
+   - [ ] Upload any images to journal
+   - [ ] Sync orgzly
+   - [ ] Email Inboxes
+
+*** TODO Freshen Up [0/3]
+   - [ ] Take a Bath
+   - [ ] Have Breakfast
+   - [ ] PE-Gym JP90
+     + [[file:../Orgzly/pe.org][pe.org ]]
+   - [ ] Minoxidil beard
+
+** Determinations :determ:

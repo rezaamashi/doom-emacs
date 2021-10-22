@@ -1,50 +1,161 @@
-;; -*- no-byte-compile: t; -*-
-;;; $DOOMDIR/packages.el
+  (package! git-modes)
 
-;; To install a package with Doom you must declare them here and run 'doom sync'
-;; on the command line, then restart Emacs for the changes to take effect -- or
-;; use 'M-x doom/reload'.
+(package! graphql-mode)
 
+  (package! latex-preview-pane)
 
-;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
-;(package! some-package)
+  (package! tree-sitter)
+  (package! tree-sitter-langs)
 
-;; To install a package directly from a remote git repo, you must specify a
-;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
-;; https://github.com/raxod502/straight.el#the-recipe-format
-;(package! another-package
-;  :recipe (:host github :repo "username/repo"))
+  (package! github-review :recipe
+     (:host github
+      :repo "charignon/github-review"
+      :files ("github-review.el")))
 
-;; If the package you are trying to install does not contain a PACKAGENAME.el
-;; file, or is located in a subdirectory of the repo, you'll need to specify
-;; `:files' in the `:recipe':
-;(package! this-package
-;  :recipe (:host github :repo "username/repo"
-;           :files ("some-file.el" "src/lisp/*.el")))
+  (package! git-timemachine)
 
-;; If you'd like to disable a package included with Doom, you can do so here
-;; with the `:disable' property:
-;(package! builtin-package :disable t)
+  (package! git-messenger)
 
-;; You can override the recipe of a built in package without having to specify
-;; all the properties for `:recipe'. These will inherit the rest of its recipe
-;; from Doom or MELPA/ELPA/Emacsmirror:
-;(package! builtin-package :recipe (:nonrecursive t))
-;(package! builtin-package-2 :recipe (:repo "myfork/package"))
+  (package! company-org-block)
 
-;; Specify a `:branch' to install a package from a particular branch or tag.
-;; This is required for some packages whose default branch isn't 'master' (which
-;; our package manager can't deal with; see raxod502/straight.el#279)
-;(package! builtin-package :recipe (:branch "develop"))
+  (package! company-math :recipe
+          (:type git
+           :host github
+           :repo "vspinu/company-math"))
 
-;; Use `:pin' to specify a particular commit to install.
-;(package! builtin-package :pin "1a2b3c4d5e")
+  (package! multi-vterm)
 
+  (package! yarn
+      :recipe (:host github
+               :repo "jmfirth/yarn.el"))
 
-;; Doom's packages are pinned to a specific commit and updated from release to
-;; release. The `unpin!' macro allows you to unpin single packages...
-;(unpin! pinned-package)
-;; ...or multiple packages
-;(unpin! pinned-package another-pinned-package)
-;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
-;(unpin! t)
+  (package! parinfer-rust-mode)
+
+  (package! company-nginx)
+
+(package! speed-type)
+
+  (package! lexic
+      :recipe (:host github
+               :repo "tecosaur/lexic"))
+
+  (package! org-contrib)
+
+(package! org-appear)
+
+(package! org-pretty-table :recipe (:host github :repo "Fuco1/org-pretty-table"))
+
+  (package! org-ol-tree :recipe (:host github :repo "Townk/org-ol-tree"))
+
+(package! org-diff :recipe (:host github :repo "tecosaur/orgdiff"))
+
+  (package! org-super-agenda)
+
+  (package! org-habit-plus :recipe
+      (:host github :repo "myshevchuk/org-habit-plus"
+       :files ("org-habit-plus.el")))
+
+  (package! calfw-org)
+
+  (package! scimax-latex :recipe
+      (:host github
+       :repo "jkitchin/scimax"
+       :files ("scimax-latex.el")))
+
+  (package! cdlatex)
+
+  (package! org-roam-ui
+   :recipe (:host github
+            :repo "org-roam/org-roam-ui"
+            :files ("*.el" "out")))
+
+  (package! org-roam-bibtex)
+
+  (package! org-sort-task :recipe
+      (:host github
+       :repo "felipelalli/org-sort-tasks"
+       :files ("org-sort-tasks.el")))
+
+  (package! org-transclusion :recipe
+       (:host github
+        :repo "nobiot/org-transclusion"))
+
+  (package! org-noter)
+
+  (package! org-pandoc-import
+   :recipe (:host github
+            :repo "tecosaur/org-pandoc-import"
+            :files ("*.el" "filters" "preprocessors")))
+
+  (package! org-recoll)
+
+  (package! org-randomnote)
+
+(package! ivy-bibtex)
+
+  (package! calibredb)
+
+  (package! pdfgrep)
+
+  (package! nov)
+
+  (package! wttrin
+    :recipe (:host github
+             :repo "tecosaur/emacs-config"
+             :files ("lisp/wttrin/wttrin.el")))
+
+  (package! ol-notmuch)
+
+  (package! notmuch-maildir)
+
+  (package! notmuch-bookmarks)
+
+  (package! bbdb-vcard)
+
+  (package! counsel-bbdb)
+
+  (package! org-mime)
+
+  (package! slack)
+
+  (package! ox-slack)
+
+  (package! circe)
+
+(package! notdeft :recipe
+  (:host github
+   :repo "hasu/notdeft"))
+
+(package! vlf)
+
+  (package! elfeed-goodies)
+
+  (package! org-web-tools)
+
+  (package! calctex :recipe
+      (:host github
+       :repo "johnbcoughlin/calctex"
+       :files
+       ("*.el"
+        "calctex/*.el"
+        "calctex-contrib/*.el"
+        "org-calctex/*.el"
+        "vendor")))
+
+  (package! sx)
+
+  (package! howdoyou)
+
+  (package! discover-my-major)
+
+  (package! helm-system-packages)
+
+  (package! system-packages)
+
+  (package! wgrep :recipe
+       (:host github
+        :repo "mhayashi1120/Emacs-wgrep"))
+
+  (package! auto-minor-mode)
+
+  (package! link-hint)
