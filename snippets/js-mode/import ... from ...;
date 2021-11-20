@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: import ... from ...;
+# uuid: import
+# --
+import ${3:Object} from '${1:./$2}';
