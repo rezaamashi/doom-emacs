@@ -6,6 +6,7 @@
 - tags :: %^{tags}
   
 * Cover
+#+ATTR_ORG: :width 250
 [[file:%^{cover}]]
 
 * Overview
