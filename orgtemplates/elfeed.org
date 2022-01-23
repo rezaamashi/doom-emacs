@@ -6,6 +6,7 @@
 
 *** Berita                                                         :berita:
 
+
 **** https://www.jawapos.com/nasional/rss
 
 **** https://lapi.kumparan.com/v2.0/rss/
@@ -27,10 +28,18 @@
 
 *** Nouvelles                                                   :nouvelles:
 
-
 *** Security                                                     :security:
 
 **** https://www.thecipherbrief.com/feed
+
+*** Gaming  :gaming:
+
+**** https://www.gamingonlinux.com/article_rss.php
+
+
+*** Linux :linux:
+
+**** https://www.phoronix.com/rss.php
 
 ** Youtube
 
