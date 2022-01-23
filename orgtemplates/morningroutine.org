@@ -7,11 +7,11 @@ I'm sure you're ready to jump-start your day? Nice. Now let's start it right by 
 
 ** I dreamt about... :dreamlog:
 
-** TODO Daily Review [0/4]
+** TODO Daily Review [0/3]
 
 *** TODO Take A Deep Breath [0/4]
    - [ ] Fill in the gratitude journal
-   - [ ] Ergonomic stretch
+   - [ ] UHP stretch
    - [ ] Wim Hof Breath
    - [ ] Zixia Method Meditation
    - [ ] Make bed meditatively and 5 min clean
@@ -36,8 +36,6 @@ I'm sure you're ready to jump-start your day? Nice. Now let's start it right by 
 *** TODO Freshen Up [0/3]
    - [ ] Take a Bath
    - [ ] Have Breakfast
-   - [ ] PE-Gym JP90
-     + [[file:../Orgzly/pe.org][pe.org ]]
    - [ ] Minoxidil beard
 
 ** Determinations :determ:

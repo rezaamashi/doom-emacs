@@ -5,10 +5,12 @@ Another amazing day, Right? Now time to kick the blanket and wind down. But, hey
 ** TODO Daily Reflection [0/3]
 
 *** TODO Get Clean [0/3]
-    - [ ] Brush Teeth
-    - [ ] Have Dinner
-    - [ ] Use Vaseline
-    - [ ] Use Minoxidil
+   - [ ] PE-Gym
+     + [[file:../Orgzly/pe.org][pe.org ]]
+   - [ ] Brush Teeth
+     - [ ] Have Dinner
+     - [ ] Use Vaseline
+     - [ ] Use Minoxidil
 
 *** TODO Take A Deep Breath [0/3]
    - [ ] Ergonomic stretch
