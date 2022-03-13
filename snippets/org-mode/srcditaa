@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: srcditaa
+# uuid: srcditaa
+# key: ditaa
+# condition: t
+# --
+#+begin_src ditaa :file diagram/${1}.png :exports results
+                    +----------+
+                    |Hook Point|
+                    +----------+
+                         |
+                         v
++------------+    +------------+     +------------+
+|Intelligence| -> |  Initial   | ->  | Close/Deal |
+| Gatherings |    |Presentation|     |            |
++------------+    +------------+     +------------+
+#+end_src

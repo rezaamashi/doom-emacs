@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: dateday
+# uuid: dateday
+# key: \dateday
+# condition: t
+# --
+`(format-time-string "%d-%A")`
