@@ -2,18 +2,24 @@
 Good Evening, %n.
 Another amazing day, Right? Now time to kick the blanket and wind down. But, hey let's fill this checkboxes first and by the end of it tell me what you experience today, Because I AM CURIOUS.
 
+** Your experience today
+%^{What do you experience today?}
+
+** What to do tomorrow?
+*** NEXT %?
+
 ** TODO Daily Reflection [0/3]
 
-*** TODO Get Clean [0/3]
+*** TODO Get Clean [0/5]
    - [ ] PE-Gym
      + [[file:../Orgzly/pe.org][pe.org ]]
    - [ ] Brush Teeth
-     - [ ] Have Dinner
-     - [ ] Use Vaseline
-     - [ ] Use Minoxidil
+   - [ ] Have Dinner
+   - [ ] Use Vaseline
+   - [ ] Use Minoxidil
 
 *** TODO Take A Deep Breath [0/3]
-   - [ ] Ergonomic stretch
+   - [ ] UHP stretch
    - [ ] Wim Hof Breath
    - [ ] Zixia Method Meditation
 
@@ -21,9 +27,4 @@ Another amazing day, Right? Now time to kick the blanket and wind down. But, hey
     - [ ] Retell the day
     - [ ] Clear your mind, what to do tomorrow?
     - [ ] Yesterday's journal if not done
-
-** What do you experience today?
-%?
-
-** What to do tomorrow?
 

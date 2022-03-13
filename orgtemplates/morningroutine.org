@@ -2,22 +2,23 @@
 Good Morning, %n.
 I'm sure you're ready to jump-start your day? Nice. Now let's start it right by filling in these checkboxes
 
+** I dreamt about... :dreamlog:
+%^{How's your sleep?}
+
 ** I am grateful for... 🍀                                       :gratitude:
 1. %?
-
-** I dreamt about... :dreamlog:
 
 ** TODO Daily Review [0/3]
 
 *** TODO Take A Deep Breath [0/4]
    - [ ] Fill in the gratitude journal
-   - [ ] UHP stretch
    - [ ] Wim Hof Breath
    - [ ] Zixia Method Meditation
    - [ ] Make bed meditatively and 5 min clean
    - [ ] Yesterday's journal if not done
 
 *** TODO Get Clear [0/8]
+   - [ ] Email Inboxes
    - [ ] Get "IN" to Zero
      + [[file:../Orgzly/inbox.org][inbox.org ]]
    - [ ] Empty Your Head: New projects, tasks, waiting-fors, someday/maybes?
@@ -31,11 +32,12 @@ I'm sure you're ready to jump-start your day? Nice. Now let's start it right by 
      + [[file:./albums/%<%Y-%V_%b>-album_of_the_week.org][Album of the Week]]
    - [ ] Upload any images to journal
    - [ ] Sync orgzly
-   - [ ] Email Inboxes
 
 *** TODO Freshen Up [0/3]
+   - [ ] Go to the Gym
    - [ ] Take a Bath
    - [ ] Have Breakfast
    - [ ] Minoxidil beard
 
 ** Determinations :determ:
+%^{Get your ass going}
