@@ -1,7 +1,7 @@
 #+CREATED: %U
 #+LAST_MODIFIED: %U
 #+STARTUP: content
-#+FILETAGS: Book
+#+FILETAGS: :RefNotes:Book:
 
 - tags :: %^{tags}
   

@@ -1,0 +1,16 @@
+#+CREATED: %U
+#+LAST_MODIFIED: %U
+#+STARTUP: content
+#+FILETAGS: course
+
+- tags :: %^{tags}
+  
+* Overview
+%^{note}
+
+* Notes
+:PROPERTIES:
+:URL: %^{url}
+:AUTHOR: %^{author-or-editor}
+:YEAR: %^{year}
+:END:

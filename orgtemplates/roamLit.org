@@ -1,0 +1,9 @@
+#+CREATED: %U
+#+LAST_MODIFIED: %U
+#+STARTUP: content
+#+FILETAGS: :LitNotes:Book:
+
+- source :: %^{Insert Citekey to the Reference Note:}
+- tags ::
+  
+* Overview

@@ -1,7 +1,7 @@
 #+CREATED: %U
 #+LAST_MODIFIED: %U
 #+STARTUP: content
-#+FILETAGS: Article
+#+FILETAGS: :RefNotes:Article:
 
 - keywords :: %^{keywords}
   

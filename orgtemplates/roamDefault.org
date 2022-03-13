@@ -1,8 +1,10 @@
 #+CREATED: %U
 #+LAST_MODIFIED: %U
 #+STARTUP: content
-#+FILETAGS:
+#+FILETAGS: :PermNotes:
 
-- keywords :: %?
+- tags :: %?
 
 * Tasks
+
+* Overview
