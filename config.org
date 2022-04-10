@@ -3446,12 +3446,16 @@ Configuration taken from [[https://kitchingroup.cheme.cmu.edu/blog/2016/10/29/Se
 #+begin_src emacs-lisp
   (use-package! trashed
     :bind ("C-c t" . trashed))
+**** File Preview
+
+***** Installation
+#+begin_src emacs-lisp :tangle packages.el
+(package! peep-dired)
 #+end_src
 
-*** COMMENT Preview (peep-dired)
+***** Configuration
 #+begin_src emacs-lisp
   (use-package! peep-dired
-    :commands peep-dired
     :config
     (evil-define-key 'normal peep-dired-mode-map (kbd "g") 'peep-dired-scroll-page-down
                                                (kbd "G") 'peep-dired-scroll-page-up

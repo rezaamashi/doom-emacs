@@ -122,6 +122,9 @@
 
   (package! circe)
 ;; [[file:config.org::*Installation][Installation:1]]
+(package! peep-dired)
+;; Installation:1 ends here
+;; [[file:config.org::*Installation][Installation:1]]
 (package! trashed)
 ;; Installation:1 ends here
 

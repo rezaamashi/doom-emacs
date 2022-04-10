@@ -1921,6 +1921,19 @@
     (setq twittering-use-master-password t
           twittering-cert-file "/etc/ssl/certs/ca-certificates.crt"
           twittering-icon-mode t))
+
+;; [[file:config.org::*Configuration][Configuration:1]]
+  (use-package! peep-dired
+    :config
+    (evil-define-key 'normal peep-dired-mode-map (kbd "g") 'peep-dired-scroll-page-down
+                                               (kbd "G") 'peep-dired-scroll-page-up
+                                               (kbd "j") 'peep-dired-next-file
+                                               (kbd "k") 'peep-dired-prev-file)
+    (add-hook 'peep-dired-hook 'evil-normalize-keymaps)
+    (setq peep-dired-ignored-extensions '("mkv" "iso" "mp4")
+          peep-dired-cleanup-eagerly t))
+;; Configuration:1 ends here
+
 ;; [[file:config.org::*Configuration][Configuration:1]]
 (map! :leader
       :desc "trashed" "ft" #'trashed)
