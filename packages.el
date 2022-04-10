@@ -122,9 +122,12 @@
 
   (package! circe)
 
-(package! notdeft :recipe
+;; [[file:config.org::*Installation][Installation:1]]
+(package! notdeft
+  :recipe
   (:host github
    :repo "hasu/notdeft"))
+;; Installation:1 ends here
 
 (package! vlf)
 

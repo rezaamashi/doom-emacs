@@ -1922,9 +1922,10 @@
           twittering-cert-file "/etc/ssl/certs/ca-certificates.crt"
           twittering-icon-mode t))
 
+;; [[file:config.org::*Configuration][Configuration:1]]
   (use-package! notdeft
-    :hook (notdeft-load-hook . notdeft-xapian-make-program-when-uncurrent)
     :preface
+    (defalias 'deft 'notdeft) ;; avoid Doom use of deft
     (defvar notdeft-directory nil)
     (defvar notdeft-directories nil)
     :config
@@ -1937,6 +1938,8 @@
           notdeft-secondary-extensions '("md" "tex"))
     (evil-define-key 'normal notdeft-mode-map (kbd "q") 'quit-window))
 
+  (add-hook! 'notdeft-load-hook #'notdeft-xapian-make-program-when-uncurrent)
+;; Configuration:1 ends here
   (use-package! tramp
     :config
     (setenv "SHELL" "/bin/bash")
