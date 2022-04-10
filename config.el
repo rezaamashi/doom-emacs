@@ -1,28 +1,30 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;; [[file:config.org::*Exclude Homedir][Exclude Homedir:1]]
+(after! projectile
+ (setq projectile-project-root-files-bottom-up (remove
+            ".git" projectile-project-root-files-bottom-up)))
+;; Exclude Homedir:1 ends here
+
+;; [[file:config.org::*Log level][Log level:1]]
+(setq! log-warning-minimum-level :error) ;;default :warning
+;; Log level:1 ends here
+
+;; [[file:config.org::*Bookmark Saving Configuration][Bookmark Saving Configuration:1]]
+(setq bookmark-save-flag 1)
+;; Bookmark Saving Configuration:1 ends here
+
+;; [[file:config.org::*User Credentials][User Credentials:1]]
 (setq user-full-name "Reza A'masyi"
       user-mail-address "mnurrreza@gmail.com")
+;; User Credentials:1 ends here
 
-  (defvar org_file_dir (concat (getenv "HOME") "/org/"))
-  (defvar org_agenda (concat (getenv "HOME") "/org/Orgzly/"))
+;; [[file:config.org::*Workflows Variables][Workflows Variables:1]]
+(load-file (expand-file-name "elisp/variables.el" doom-private-dir))
+;; Workflows Variables:1 ends here
 
-  (defvar org_journal (concat (getenv "HOME") "/org/journal/"))
-  (defvar org_noter (concat (getenv "HOME") "/org/roam/noter"))
-  (defvar org_roam (concat (getenv "HOME") "/org/roam/"))
-  (defvar bib_notes (concat (getenv "HOME") "/org/roam/bib_notes/bib_notes.org"))
-  (defvar zot_bib (concat (getenv "HOME") "/Documents/Reza/BibTex/Zotero-mylib/Zotero-mylib.bib"))
-  (defvar cal_bib (concat (getenv "HOME") "/Documents/Reza/BibTex/Zotero-mylib/CalibreBib.bib"))
-  (defvar zot_col (concat (getenv "HOME") "/Documents/Reza/BibTex/Zotero-mylib/files/Input"))
-
-  (defvar proj_dir (concat (getenv "HOME") "/Documents/Reza/Project"))
-
-  (defvar draft_dir (concat (getenv "HOME") "/Maildir/draft"))
-  (defvar gmail_sent_dir (concat (getenv "HOME") "/Maildir/mnurrreza-gmail/Sent Items"))
-  (defvar yahoo_sent_dir (concat (getenv "HOME") "/Maildir/mnurreza-yahoo/Sent"))
-  (defvar uni_sent_dir (concat (getenv "HOME") "/Maildir/mnurrreza-gmail/[acc1].Sent Mail"))
-  (defvar mail_dir (concat (getenv "HOME") "/Maildir/"))
-
-(setq bare_git_dir (concat "--git-dir=" (expand-file-name "~/.dotfiles.git")))
+;; [[file:config.org::*Configuration][Configuration:1]]
+(setq bare_git_dir (concat "--git-dir=" (expand-file-name "~/.settings/.dotfiles.git")))
 (setq bare_work_tree (concat "--work-tree=" (expand-file-name "~")))
 ;; use maggit on git bare repos like dotfiles repos, don't forget to change `bare-git-dir' and `bare-work-tree' to your needs
 (defun rz/magit-status-dotfiles-bare ()

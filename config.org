@@ -12,6 +12,25 @@ for more info).
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 #+end_src
 
+** Exclude Homedir
+#+begin_src emacs-lisp
+(after! projectile
+ (setq projectile-project-root-files-bottom-up (remove
+            ".git" projectile-project-root-files-bottom-up)))
+#+end_src
+
+** Log level
+I set the log warning level to higher since =org-element= keep throwing warning in =org-roam=
+#+begin_src emacs-lisp
+(setq! log-warning-minimum-level :error) ;;default :warning
+#+end_src
+
+** Bookmark Saving Configuration
+Set up emacs to save bookmark on every modification of =bookmark-alist=
+#+begin_src emacs-lisp
+(setq bookmark-save-flag 1)
+#+end_src
+
 * User Credentials
 #+begin_src emacs-lisp
 (setq user-full-name "Reza A'masyi"
