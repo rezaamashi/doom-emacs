@@ -3578,8 +3578,6 @@ A better deft alternative with xapian backend for handling bigger amount of file
         (mapc #'elfeed-search-update-entry entries)
         (unless (use-region-p) (forward-line))))
     :commands elfeed
-    :hook ((elfeed-show-mode . visual-line-mode)
-           (elfeed-show-mode . visual-fill-column-mode))
     :config
     ;; (defface elfeed-show-title-face '((t (:weight ultrabold :slant italic :height 1.5)))
     ;;     "title face in elfeed show buffer"
@@ -3602,7 +3600,10 @@ A better deft alternative with xapian backend for handling bigger amount of file
       (kbd "U") 'elfeed-update
       (kbd "+") 'elfeed-search-tag-all
       (kbd "-") 'elfeed-search-untag-all)
-      (elfeed-org))
+    (elfeed-org))
+
+(add-hook! 'elfeed-show-mode-hook
+  (visual-line-mode 1)(visual-fill-column-mode 1)(mixed-pitch-mode 1))
 #+end_src
 
 
@@ -3610,14 +3611,14 @@ A better deft alternative with xapian backend for handling bigger amount of file
 
 *** Org Interface (elfeed-org)
 #+begin_src emacs-lisp
-  (use-package! elfeed-org
-    :hook (elfeed-search . (lambda () (elfeed-org)))
-    :preface
+  (after! elfeed-org
     (setq rmh-elfeed-org-files
           (list
            (expand-file-name
             "orgtemplates/elfeed.org"
             doom-private-dir))))
+
+  (add-hook! 'elfeed-search-hook #'elfeed-org)
 #+end_src
 
 *** Goodies (elfeed-goodies)

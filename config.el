@@ -1948,6 +1948,7 @@
     :config
     (require 'vlf-setup))
 
+;; [[file:config.org::*Configuration][Configuration:1]]
   (use-package! elfeed
     :preface
     ;; Watch Video Using MPV
@@ -2000,8 +2001,6 @@
         (mapc #'elfeed-search-update-entry entries)
         (unless (use-region-p) (forward-line))))
     :commands elfeed
-    :hook ((elfeed-show-mode . visual-line-mode)
-           (elfeed-show-mode . visual-fill-column-mode))
     :config
     ;; (defface elfeed-show-title-face '((t (:weight ultrabold :slant italic :height 1.5)))
     ;;     "title face in elfeed show buffer"
@@ -2024,17 +2023,24 @@
       (kbd "U") 'elfeed-update
       (kbd "+") 'elfeed-search-tag-all
       (kbd "-") 'elfeed-search-untag-all)
-      (elfeed-org))
+    (elfeed-org))
 
-  (use-package! elfeed-org
-    :hook (elfeed-search . (lambda () (elfeed-org)))
-    :preface
+(add-hook! 'elfeed-show-mode-hook
+  (visual-line-mode 1)(visual-fill-column-mode 1)(mixed-pitch-mode 1))
+;; Configuration:1 ends here
+
+;; [[file:config.org::*Org Interface (elfeed-org)][Org Interface (elfeed-org):1]]
+  (after! elfeed-org
     (setq rmh-elfeed-org-files
           (list
            (expand-file-name
             "orgtemplates/elfeed.org"
             doom-private-dir))))
 
+  (add-hook! 'elfeed-search-hook #'elfeed-org)
+;; Org Interface (elfeed-org):1 ends here
+
+;; [[file:config.org::*Configuration][Configuration:1]]
   (use-package! elfeed-goodies
     :after elfeed
     :init
@@ -2046,6 +2052,7 @@
     (evil-define-key 'normal elfeed-search-mode-map
       (kbd "J") 'elfeed-goodies/split-show-next
       (kbd "K") 'elfeed-goodies/split-show-prev))
+;; Configuration:1 ends here
 
   (use-package! org-web-tools
     :after org)
