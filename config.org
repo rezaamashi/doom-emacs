@@ -3462,6 +3462,19 @@ Configuration taken from [[https://kitchingroup.cheme.cmu.edu/blog/2016/10/29/Se
           peep-dired-cleanup-eagerly t))
 #+end_src
 
+** Trash Management
+
+*** Installation
+#+begin_src emacs-lisp :tangle packages.el
+(package! trashed)
+#+end_src
+
+*** Configuration
+#+begin_src emacs-lisp
+(map! :leader
+      :desc "trashed" "ft" #'trashed)
+#+end_src
+
 ** NotDeft
 
 *** Installation

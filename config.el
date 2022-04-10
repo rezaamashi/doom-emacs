@@ -1921,6 +1921,10 @@
     (setq twittering-use-master-password t
           twittering-cert-file "/etc/ssl/certs/ca-certificates.crt"
           twittering-icon-mode t))
+;; [[file:config.org::*Configuration][Configuration:1]]
+(map! :leader
+      :desc "trashed" "ft" #'trashed)
+;; Configuration:1 ends here
 
 ;; [[file:config.org::*Configuration][Configuration:1]]
   (use-package! notdeft
