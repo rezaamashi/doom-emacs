@@ -3436,16 +3436,18 @@ Configuration taken from [[https://kitchingroup.cheme.cmu.edu/blog/2016/10/29/Se
     (diff-hl-margin-mode))
 #+end_src
 
-*** COMMENT RSync copy (dired-rsync)
-#+begin_src emacs-lisp
-  (use-package! dired-rsync
-    :general (dired-mode-map "C-c C-r" #'dired-rsync))
+**** RSync Integration
+
+***** Installation
+#+begin_src emacs-lisp :tangle packages.el
+(package! dired-rsync)
 #+end_src
 
-*** COMMENT Trash Management
+***** Keybindings
 #+begin_src emacs-lisp
-  (use-package! trashed
-    :bind ("C-c t" . trashed))
+(map! :map dired-mode-map "C-c C-r" #'dired-rsync)
+#+end_src
+
 **** File Preview
 
 ***** Installation

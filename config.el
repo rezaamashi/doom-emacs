@@ -1922,6 +1922,10 @@
           twittering-cert-file "/etc/ssl/certs/ca-certificates.crt"
           twittering-icon-mode t))
 
+;; [[file:config.org::*Keybindings][Keybindings:1]]
+(map! :map dired-mode-map "C-c C-r" #'dired-rsync)
+;; Keybindings:1 ends here
+
 ;; [[file:config.org::*Configuration][Configuration:1]]
   (use-package! peep-dired
     :config
