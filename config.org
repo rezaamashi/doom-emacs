@@ -3421,19 +3421,25 @@ Configuration taken from [[https://kitchingroup.cheme.cmu.edu/blog/2016/10/29/Se
 #+begin_src emacs-lisp
   (use-package! fd-dired
     :after dired)
+**** Diff Information
+
+***** Installation
+#+begin_src emacs-lisp :tangle packages.el
+(package! diff-hl)
 #+end_src
 
-*** COMMENT Show diff (diff-hl)
+***** Configuration
 #+begin_src emacs-lisp
   (use-package! diff-hl
-    :hook ((dired-mode . diff-hl-dired-mode-unless-remote)
-           (magit-post-refresh . diff-hl-magit-post-refresh)
-           (prog-mode . diff-hl-mode)
-           (diff-hl-mode . diff-hl-flydiff-mode))
     :config
     (setq diff-hl-flydiff-delay 0.05)
     ;; use margin instead of fringe
     (diff-hl-margin-mode))
+
+  (add-hook! 'dired-mode-hook #'diff-hl-dired-mode-unless-remote)
+  (add-hook! 'magit-post-refresh-hook #'diff-hl-magit-post-refresh)
+  (add-hook! 'prog-mode-hook #'diff-hl-mode)
+  (add-hook! 'diff-hl-mode-hook #'diff-hl-flydiff-mode)
 #+end_src
 
 **** RSync Integration

@@ -1922,6 +1922,19 @@
           twittering-cert-file "/etc/ssl/certs/ca-certificates.crt"
           twittering-icon-mode t))
 
+;; [[file:config.org::*Configuration][Configuration:1]]
+  (use-package! diff-hl
+    :config
+    (setq diff-hl-flydiff-delay 0.05)
+    ;; use margin instead of fringe
+    (diff-hl-margin-mode))
+
+  (add-hook! 'dired-mode-hook #'diff-hl-dired-mode-unless-remote)
+  (add-hook! 'magit-post-refresh-hook #'diff-hl-magit-post-refresh)
+  (add-hook! 'prog-mode-hook #'diff-hl-mode)
+  (add-hook! 'diff-hl-mode-hook #'diff-hl-flydiff-mode)
+;; Configuration:1 ends here
+
 ;; [[file:config.org::*Keybindings][Keybindings:1]]
 (map! :map dired-mode-map "C-c C-r" #'dired-rsync)
 ;; Keybindings:1 ends here

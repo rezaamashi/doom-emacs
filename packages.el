@@ -47,7 +47,9 @@
 
   (package! org-ol-tree :recipe (:host github :repo "Townk/org-ol-tree"))
 
+;; [[file:config.org::*Installation][Installation:1]]
 (package! org-diff :recipe (:host github :repo "tecosaur/orgdiff"))
+;; Installation:1 ends here
 
   (package! org-super-agenda)
 
@@ -121,6 +123,10 @@
   (package! ox-slack)
 
   (package! circe)
+;; [[file:config.org::*Installation][Installation:1]]
+(package! diff-hl)
+;; Installation:1 ends here
+
 ;; [[file:config.org::*Installation][Installation:1]]
 (package! dired-rsync)
 ;; Installation:1 ends here
