@@ -73,11 +73,12 @@ This variable is set to make a more streamlined Zettelkasten workflow
   (defvar mail_dir (concat (getenv "HOME") "/Maildir/"))
 #+end_src
 
-*** Dotfiles Git-Bare
 
-**** Configuration
+** Dotfiles Git-Bare
+
+*** Configuration
 #+begin_src emacs-lisp
-(setq bare_git_dir (concat "--git-dir=" (expand-file-name "~/.dotfiles.git")))
+(setq bare_git_dir (concat "--git-dir=" (expand-file-name "~/.settings/.dotfiles.git")))
 (setq bare_work_tree (concat "--work-tree=" (expand-file-name "~")))
 ;; use maggit on git bare repos like dotfiles repos, don't forget to change `bare-git-dir' and `bare-work-tree' to your needs
 (defun rz/magit-status-dotfiles-bare ()
@@ -99,14 +100,11 @@ This variable is set to make a more streamlined Zettelkasten workflow
   (call-interactively 'magit-status))
 #+end_src
 
-**** Keybinding
-#+begin_src emacs-lisp :tangle yes
+*** Keybinding
+#+begin_src emacs-lisp
 (map! :leader
-      :desc "Git dotfiles"
-      "g d" #'rz/magit-status-dotfiles-bare)
-(map! :leader
-      :desc "Git dotfiles"
-      "g g" #'rz/magit-status)
+      :desc "Git dotfiles" "g d" #'rz/magit-status-dotfiles-bare
+      :desc "Magit status" "g g" #'rz/magit-status)
 #+end_src
 
 * UI Settings
@@ -138,6 +136,14 @@ This config is needed to load faces when emacs is running in daemon
         (rz/set-font-faces))
 #+end_src
 
+*** Doom font Configuration
+#+begin_src emacs-lisp
+(setq doom-font (font-spec :family "Iosevka" :size 15)
+      doom-big-font (font-spec :family "Iosevka" :size 36)
+      doom-variable-pitch-font (font-spec :family "Overpass" :size 18)
+      doom-unicode-font (font-spec :family "Iosevka")
+      doom-serif-font (font-spec :family "Bookerly" :weight 'light))
+#+end_src
 
 *** Mixed-Pitch
 #+begin_src emacs-lisp
@@ -149,12 +155,21 @@ This config is needed to load faces when emacs is running in daemon
 
 ** Theme
 #+begin_src emacs-lisp
-(setq doom-theme 'doom-challenger-deep)
+;; (setq doom-theme 'doom-challenger-deep)
+;; (setq doom-theme 'doom-solarized-light)
+(setq doom-theme 'doom-city-lights)
 #+end_src
 
 ** Time Display Configuration
 #+begin_src emacs-lisp
 (setq display-time-24hr-format t)
+#+end_src
+
+** Hide Mode line
+#+begin_src emacs-lisp
+(map! :leader
+      :desc "Hide mode-line"
+      "t m" #'hide-mode-line-mode)
 #+end_src
 
 ** Line Numbering

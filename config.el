@@ -44,44 +44,46 @@
   (setq magit-git-global-arguments (remove bare_git_dir magit-git-global-arguments))
   (setq magit-git-global-arguments (remove bare_work_tree magit-git-global-arguments))
   (call-interactively 'magit-status))
+;; Configuration:1 ends here
 
+;; [[file:config.org::*Keybinding][Keybinding:1]]
 (map! :leader
-      :desc "Git dotfiles"
-      "g d" #'rz/magit-status-dotfiles-bare)
-(map! :leader
-      :desc "Git dotfiles"
-      "g g" #'rz/magit-status)
+      :desc "Git dotfiles" "g d" #'rz/magit-status-dotfiles-bare
+      :desc "Magit status" "g g" #'rz/magit-status)
+;; Keybinding:1 ends here
 
-    (defvar rz/default-font-size 105)
-    (defvar rz/default-variable-font-size 105)
+;; [[file:config.org::*Doom font Configuration][Doom font Configuration:1]]
+(setq doom-font (font-spec :family "Iosevka" :size 15)
+      doom-big-font (font-spec :family "Iosevka" :size 36)
+      doom-variable-pitch-font (font-spec :family "Overpass" :size 18)
+      doom-unicode-font (font-spec :family "Iosevka")
+      doom-serif-font (font-spec :family "Bookerly" :weight 'light))
+;; Doom font Configuration:1 ends here
 
-  (defun rz/set-font-faces ()
-    (message "Setting faces!")
-    (set-face-attribute 'default nil :font "Iosevka" :height rz/default-font-size)
-
-    ;; Set the fixed pitch face
-    (set-face-attribute 'fixed-pitch nil :font "Iosevka" :height rz/default-font-size)
-
-    ;; Set the variable pitch face
-    (set-face-attribute 'variable-pitch nil :font "Fira Sans" :height rz/default-variable-font-size :weight 'regular))
-
-  (if (daemonp)
-        (add-hook 'after-make-frame-functions
-                  (lambda (frame)
-                    (setq doom-modeline-icon t)
-                    (with-selected-frame frame
-                      (rz/set-font-faces))))
-        (rz/set-font-faces))
-
+;; [[file:config.org::*Mixed-Pitch][Mixed-Pitch:1]]
   (use-package! mixed-pitch
     :config
     ;; If you want it in all text modes:
     (add-hook 'text-mode-hook 'mixed-pitch-mode))
+;; Mixed-Pitch:1 ends here
 
-(setq doom-theme 'doom-challenger-deep)
+;; [[file:config.org::*Theme][Theme:1]]
+;; (setq doom-theme 'doom-challenger-deep)
+;; (setq doom-theme 'doom-solarized-light)
+(setq doom-theme 'doom-city-lights)
+;; Theme:1 ends here
 
+;; [[file:config.org::*Time Display Configuration][Time Display Configuration:1]]
 (setq display-time-24hr-format t)
+;; Time Display Configuration:1 ends here
 
+;; [[file:config.org::*Hide Mode line][Hide Mode line:1]]
+(map! :leader
+      :desc "Hide mode-line"
+      "t m" #'hide-mode-line-mode)
+;; Hide Mode line:1 ends here
+
+;; [[file:config.org::*Line Numbering][Line Numbering:1]]
     ;; line numbering
     (column-number-mode)
     (global-display-line-numbers-mode t)
