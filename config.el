@@ -2116,15 +2116,19 @@
       (kbd "[ [") 'sx-question-mode-previous-section
       (kbd "g R") 'sx-question-mode-refresh))
 
+;; [[file:config.org::*Configuration][Configuration:1]]
   (use-package! howdoyou
-    :commands howdoyou-query
-    :config
-    (evil-define-key 'normal howdoyou-mode-map
-      (kbd "q")   'quit-window
-      (kbd "g ]") 'howdoyou-next-link
-      (kbd "g [") 'howdoyou-previous-link
-      (kbd "g r") 'howdoyou-reload-link
-      (kbd "g R") 'howdoyou-go-back-to-first-link))
+    :commands howdoyou-query)
+;; Configuration:1 ends here
+
+;; [[file:config.org::*Keybindings][Keybindings:1]]
+  (map! :map howdoyou-mode-map :n
+        "q" #'quit-window
+        "g ]" #'howdoyou-next-link
+        "g [" #'howdoyou-previous-link
+        "g r" #'howdoyou-reload-link
+        "g R" #'howdoyou-go-back-to-first-link)
+;; Keybindings:1 ends here
 
   (use-package! discover-my-major
     :commands (discover-my-major discover-my-mode))

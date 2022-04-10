@@ -144,7 +144,9 @@
 
   (package! sx)
 
+;; [[file:config.org::*Installation][Installation:1]]
   (package! howdoyou)
+;; Installation:1 ends here
 
   (package! discover-my-major)
 
