@@ -4,3 +4,4 @@ packages.el
 /custom.el
 /elisp/theme.el
 /personal/*.el
+/projectile/projectile.backup
