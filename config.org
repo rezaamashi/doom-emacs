@@ -97,13 +97,13 @@ This variable is set to make a more streamlined Zettelkasten workflow
 
 *** Configuration
 #+begin_src emacs-lisp
-(setq bare_git_dir (concat "--git-dir=" (expand-file-name "~/.settings/.dotfiles.git")))
+(setq bare_git_dir (concat "--git-dir=" (expand-file-name "~/.dotfiles")))
 (setq bare_work_tree (concat "--work-tree=" (expand-file-name "~")))
 ;; use maggit on git bare repos like dotfiles repos, don't forget to change `bare-git-dir' and `bare-work-tree' to your needs
 (defun rz/magit-status-dotfiles-bare ()
   "set --git-dir and --work-tree in `magit-git-global-arguments' to `bare-git-dir' and `bare-work-tree' and calls `magit-status'"
   (interactive)
-  (require 'magit-git)
+  (use-package! magit-git)
   (add-to-list 'magit-git-global-arguments bare_git_dir)
   (add-to-list 'magit-git-global-arguments bare_work_tree)
   (call-interactively 'magit-status))
@@ -113,7 +113,7 @@ This variable is set to make a more streamlined Zettelkasten workflow
 (defun rz/magit-status ()
   "removes --git-dir and --work-tree in `magit-git-global-arguments' and calls `magit-status'"
   (interactive)
-  (require 'magit-git)
+  (use-package! magit-git)
   (setq magit-git-global-arguments (remove bare_git_dir magit-git-global-arguments))
   (setq magit-git-global-arguments (remove bare_work_tree magit-git-global-arguments))
   (call-interactively 'magit-status))
