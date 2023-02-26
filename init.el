@@ -138,7 +138,7 @@
        (cc                ; C > C++ == 1
         +lsp)
        ;;clojure           ; java with a lisp
-       ;;common-lisp       ; if you've seen one lisp, you've seen them all
+       common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
        (csharp            ; unity, .NET, and mono shenanigans
@@ -162,8 +162,8 @@
        ;;idris             ; a language you can depend on
        (json +lsp)              ; At least it ain't XML
        (java      ; the poster child for carpal tunnel syndrome
-        +lsp
-        +meghanada)
+        +lsp)
+        ;; +meghanada)
        (javascript        ; all(hope(abandon(ye(who(enter(here))))))
         +lsp)
        ;;julia             ; a better, faster MATLAB
