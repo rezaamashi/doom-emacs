@@ -3,7 +3,8 @@
 #+STARTUP: content
 #+FILETAGS: :PermNotes:
 
-- tags :: %?
+- related ::
+- references ::
 
 * Tasks
 

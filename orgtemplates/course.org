@@ -1,9 +1,10 @@
 #+CREATED: %U
 #+LAST_MODIFIED: %U
 #+STARTUP: content
-#+FILETAGS: course
+#+FILETAGS: :LitNotes:course:
 
-- tags :: %^{tags}
+- related ::
+- references ::
   
 * Overview
 %^{note}

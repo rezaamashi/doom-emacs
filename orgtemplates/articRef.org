@@ -1,10 +1,17 @@
 #+CREATED: %U
 #+LAST_MODIFIED: %U
 #+STARTUP: content
-#+FILETAGS: :RefNotes:Article:
+#+FILETAGS: :RefNotes:%^{entry-type}:
 
 - keywords :: %^{keywords}
-  
+- related ::
+
+* Tasks
+** TODO Write overview of this %^{entry-type}
+
+* Overview :overview:
+After reading this %^{entry-type}, I get that...
+
 * Abstract
 %^{abstract}
 

@@ -1,7 +1,7 @@
 #+CREATED: %U
 #+LAST_MODIFIED: %U
 #+STARTUP: content
-#+FILETAGS: %^{podcast/videos?}
+#+FILETAGS: :litNotes:%^{podcast/videos?}:
 
 - tags :: %^{tags}
   

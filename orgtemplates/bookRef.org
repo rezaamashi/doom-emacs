@@ -1,15 +1,22 @@
 #+CREATED: %U
 #+LAST_MODIFIED: %U
 #+STARTUP: content
-#+FILETAGS: :RefNotes:Book:
+#+FILETAGS: :RefNotes:%^{entry-type}:
 
 - tags :: %^{tags}
+- related ::
   
 * Cover
 #+ATTR_ORG: :width 250
 [[file:%^{cover}]]
 
-* Overview
+* Tasks
+** TODO Write overview of this %^{entry-type}
+
+* Overview :overview:
+After reading this %^{entry-type}, I get that...
+
+* Description
 %^{note}
 
 * Notes
