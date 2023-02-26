@@ -5,22 +5,20 @@ I'm sure you're ready to jump-start your day? Nice. Now let's start it right by 
 ** I dreamt about... :dreamlog:
 %^{How's your sleep?}
 
-** I am grateful for... 🍀                                       :gratitude:
-1. %?
+** TODO Daily Start-Up [0/3]
 
-** TODO Daily Review [0/3]
-
-*** TODO Take A Deep Breath [0/4]
-   - [ ] Fill in the gratitude journal
+*** TODO Take A Deep Breath [0/5]
    - [ ] Wim Hof Breath
    - [ ] Zixia Method Meditation
    - [ ] Make bed meditatively and 5 min clean
+   - [ ] Fill Artist's Way Morning Pages
    - [ ] Yesterday's journal if not done
 
 *** TODO Get Clear [0/8]
    - [ ] Email Inboxes
-   - [ ] Get "IN" to Zero
+   - [ ] Get "INBOX" to Zero
      + [[file:../Orgzly/inbox.org][inbox.org ]]
+     + [[file:../Orgzly/Mobile Inbox.org][Mobile Inbox.org ]]
    - [ ] Empty Your Head: New projects, tasks, waiting-fors, someday/maybes?
      + [[file:../Orgzly/projects.org][projects.org ]]
      + [[file:../Orgzly/waiting.org][waiting.org ]]
@@ -34,10 +32,14 @@ I'm sure you're ready to jump-start your day? Nice. Now let's start it right by 
    - [ ] Sync orgzly
 
 *** TODO Freshen Up [0/3]
-   - [ ] Go to the Gym
    - [ ] Take a Bath
+   - [ ] PE-Gym
+     + [[file:../Orgzly/pe.org][pe.org ]]
    - [ ] Have Breakfast
    - [ ] Minoxidil beard
 
 ** Determinations :determ:
 %^{Get your ass going}
+
+** Morning Pages :artistswaycourse:
+%?

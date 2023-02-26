@@ -5,14 +5,16 @@ Another amazing day, Right? Now time to kick the blanket and wind down. But, hey
 ** Your experience today
 %^{What do you experience today?}
 
+** I am grateful for... 🍀                                       :gratitude:
+1. %?
+
 ** What to do tomorrow?
 *** NEXT %?
 
 ** TODO Daily Reflection [0/3]
 
 *** TODO Get Clean [0/5]
-   - [ ] PE-Gym
-     + [[file:../Orgzly/pe.org][pe.org ]]
+   - [ ] Go to the Gym
    - [ ] Brush Teeth
    - [ ] Have Dinner
    - [ ] Use Vaseline
