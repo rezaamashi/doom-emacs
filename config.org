@@ -37,12 +37,9 @@ Set up emacs to save bookmark on every modification of =bookmark-alist=
 (setq bookmark-save-flag 1)
 #+end_src
 
-* User Credentials
 ** Open video url in MPV
 This is taken from [[https://gist.github.com/bsless/19ca4a37eee828b1b62c84971181f506][Opening YouTube Links In MPV from Emacs · GitHub]]
 #+begin_src emacs-lisp
-(setq user-full-name "Reza A'masyi"
-      user-mail-address "mnurrreza@gmail.com")
 (defun rz/mpv-play-url (url &rest args)
   "Play video url using `mpv' with `yt-dlp'"
   (interactive)
