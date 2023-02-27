@@ -1,15 +1,14 @@
-;; [[file:../config.org::*Init file][Init file:1]]
+;; [[file:../config.org::*With Straight.el][With Straight.el:1]]
 ;;; ox-init.el -*- lexical-binding: t; -*-
-; This is configuration for asynchronous
-; exporting for org files
+; This is minimal configuration for asynchronous exporting for org files, edit on
+; `../config.org'
 
-(require 'package)
-(setq package-enable-at-startup nil)
-(package-initialize)
+(setq-default user-emacs-directory (concat (getenv "HOME") "/.config/chemacs/dotemacsen/doom/"))
+(setq-default doom-private-dir (concat (getenv "HOME") "/.config/doom/"))
 
-(defvar doom-private-dir (concat (getenv "HOME") "/.config/doom"))
-(load-file (expand-file-name "./elisp/variables.el" doom-private-dir))
+(load-file (expand-file-name "elisp/variables.el" doom-private-dir))
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 (require 'cl)
 (require 'org)
@@ -34,6 +33,8 @@
    (add-to-list 'org-latex-minted-langs '(ipython "python"))))
 ;; Init file:1 ends here
 =======
+=======
+>>>>>>> f88f580 (chore(personal): Add personal folder for secrets files)
 (defvar bootstrap-version)
 (let ((bootstrap-file
        ;; I use `.local' to reuse the previous repos pulled `doom-emacs'
@@ -286,6 +287,10 @@
   :demand t ;; Ensure that it loads so that links work immediately.
   :config
   (setq reftex-default-bibliography bib_files
+<<<<<<< HEAD
+=======
+        bibtex-completion-bibliography bib_files
+>>>>>>> f88f580 (chore(personal): Add personal folder for secrets files)
         bibtex-completion-pdf-field "file"
         org-ref-default-citation-link "parencite"))
 
@@ -325,4 +330,7 @@
              kpsewhich
              texdoc))
 ;; With Straight.el:1 ends here
+<<<<<<< HEAD
 >>>>>>> c3ee9b2 (temp commit to be combined with the previous ox-init commit)
+=======
+>>>>>>> f88f580 (chore(personal): Add personal folder for secrets files)
