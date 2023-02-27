@@ -20,11 +20,6 @@ Ensure that we have the latest compat package
            :repo "emacs-compat/compat"
            :files ("*.el")))
 #+end_src
-#+begin_src emacs-lisp
-(after! projectile
- (setq projectile-project-root-files-bottom-up (remove
-            ".git" projectile-project-root-files-bottom-up)))
-#+end_src
 
 ** Log level
 I set the log warning level to higher since =org-element= keep throwing warning in =org-roam=
