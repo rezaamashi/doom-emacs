@@ -12,7 +12,14 @@ for more info).
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 #+end_src
 
-** Exclude Homedir
+** Fix for defvar-keymap provided by compat-29
+Ensure that we have the latest compat package
+#+begin_src emacs-lisp :tangle packages.el
+(package! compat
+  :recipe (:host github
+           :repo "emacs-compat/compat"
+           :files ("*.el")))
+#+end_src
 #+begin_src emacs-lisp
 (after! projectile
  (setq projectile-project-root-files-bottom-up (remove
