@@ -8,33 +8,6 @@
 
 (load-file (expand-file-name "elisp/variables.el" doom-private-dir))
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-(require 'cl)
-(require 'org)
-(with-eval-after-load 'org
-  (setq org-id-locations-file (expand-file-name ".orgids" org-directory))
-  (require 'org-transclusion)
-  (require 'org-ref)
-  (setq bibtex-completion-bibliography bib_files)
-  (setq reftex-default-bibliography bib_files)
-  (require 'oc)
-  (setq org-cite-global-bibliography bib_files)
-  (setq citar-bibliography bib_files)
-  (require 'ox)
-  (with-eval-after-load 'ox
-    (require 'ox-extra)
-    (ox-extras-activate '(latex-header-blocks ignore-headlines))
-    (setq org-export-async-debug t))
-  (require 'ox-latex)
-  (with-eval-after-load 'ox-latex
-   (add-to-list 'org-latex-packages-alist '("" "minted"))
-   (setq org-latex-listings 'minted)
-   (add-to-list 'org-latex-minted-langs '(ipython "python"))))
-;; Init file:1 ends here
-=======
-=======
->>>>>>> f88f580 (chore(personal): Add personal folder for secrets files)
 (defvar bootstrap-version)
 (let ((bootstrap-file
        ;; I use `.local' to reuse the previous repos pulled `doom-emacs'
@@ -287,10 +260,7 @@
   :demand t ;; Ensure that it loads so that links work immediately.
   :config
   (setq reftex-default-bibliography bib_files
-<<<<<<< HEAD
-=======
         bibtex-completion-bibliography bib_files
->>>>>>> f88f580 (chore(personal): Add personal folder for secrets files)
         bibtex-completion-pdf-field "file"
         org-ref-default-citation-link "parencite"))
 
@@ -330,7 +300,3 @@
              kpsewhich
              texdoc))
 ;; With Straight.el:1 ends here
-<<<<<<< HEAD
->>>>>>> c3ee9b2 (temp commit to be combined with the previous ox-init commit)
-=======
->>>>>>> f88f580 (chore(personal): Add personal folder for secrets files)

@@ -2840,32 +2840,11 @@ To open random journal entry
    (add-to-list 'org-latex-minted-langs '(ipython "python"))))
 #+end_src
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-**** Configuration
-=======
-*** Keybinding
-this setup keybinding for ~Org Export Stack~
->>>>>>> 44fb64f (refactor(org-async-export): Set keybinding and init file)
-#+begin_src emacs-lisp
-(map! :map org-export-stack-mode-map
-      :ne "RET" #'org-export-stack-view)
-#+end_src
-
-<<<<<<< HEAD
-=======
 **** With Straight.el
 #+begin_src emacs-lisp  :tangle ./elisp/ox-init.el :mkdirp yes
 ;;; ox-init.el -*- lexical-binding: t; -*-
 ; This is minimal configuration for asynchronous exporting for org files, edit on
 ; `../config.org'
-=======
-*** Configuration
-#+begin_src emacs-lisp
-(after! org
-  (setq org-export-async-init-file (expand-file-name "elisp/ox-init.el" doom-private-dir)))
-#+end_src
->>>>>>> 44fb64f (refactor(org-async-export): Set keybinding and init file)
 
 (setq-default user-emacs-directory (concat (getenv "HOME") "/.config/chemacs/dotemacsen/doom/"))
 (setq-default doom-private-dir (concat (getenv "HOME") "/.config/doom/"))
@@ -3124,6 +3103,7 @@ this setup keybinding for ~Org Export Stack~
   :demand t ;; Ensure that it loads so that links work immediately.
   :config
   (setq reftex-default-bibliography bib_files
+        bibtex-completion-bibliography bib_files
         bibtex-completion-pdf-field "file"
         org-ref-default-citation-link "parencite"))
 
@@ -3183,7 +3163,6 @@ This setup keybinding for ~Org Export Stack~
 (after! org
   (setq org-export-async-init-file (expand-file-name "elisp/ox-init.el" doom-private-dir)))
 #+end_src
->>>>>>> c3ee9b2 (temp commit to be combined with the previous ox-init commit)
 
 **** latexmkrc example
 Here is ~latexmkrc~ file that include support for ~makeglossaries~ taken from [[https://tex.stackexchange.com/questions/1226/how-to-make-latexmk-use-makeglossaries][compiling - How to make Latexmk use makeglossaries? - TeX - LaTeX Stack Exchange]].
