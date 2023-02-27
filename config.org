@@ -653,7 +653,27 @@ Sometimes when forking code from somewhere else you would need to keep original 
     (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 #+end_src
 
-*** Bug fix
+***** Magit Submodules
+#+begin_src emacs-lisp
+(after! magit-status
+  (setq magit-submodule-list-columns
+        '((("Path" 50 magit-modulelist-column-path nil)
+           ("Version" 25 magit-repolist-column-version nil)
+           ("Branch" 20 magit-repolist-column-branch nil)
+           ("B<U" 3 magit-repolist-column-unpulled-from-upstream
+            ((:right-align t)))
+           ("B>U" 3 magit-repolist-column-unpushed-to-upstream
+            ((:right-align t)))
+           ("B<P" 3 magit-repolist-column-unpulled-from-pushremote
+            ((:right-align t)))
+           ("B>P" 3 magit-repolist-column-unpushed-to-pushremote
+            ((:right-align t)))
+           ("B" 3 magit-repolist-column-branches
+            ((:right-align t)))
+           ("S" 3 magit-repolist-column-stashes
+            ((:right-align t)))))))
+#+end_src
+**** Bug fix
 Problem with =magit-rebase= menu caused by unsupported =project.el= in =emacs v.27=. This fix comes from [[https://www.reddit.com/r/emacs/comments/po9cfj/magit_commands_broken/][Reddit - Comments]].
 #+begin_src emacs-lisp
   (after! magit
