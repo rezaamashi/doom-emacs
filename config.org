@@ -734,24 +734,28 @@ Problem with =magit-rebase= menu caused by unsupported =project.el= in =emacs v.
       ("q" nil "cancel" :color blue))
 #+end_src
 
-*** Extensions
 
-**** Forge
 
 ***** Configuration
+
+**** Extensions
+
+***** Forge
+
+****** Configuration
 #+begin_src emacs-lisp
   (use-package! forge
     :after magit)
 #+end_src
 
-**** Github-Review
+***** Github-Review
 
-***** Configuration
+****** Configuration
 #+begin_src emacs-lisp
   (use-package! github-review)
 #+end_src
 
-***** Installation
+****** Installation
 #+begin_src emacs-lisp :tangle packages.el
   (package! github-review :recipe
      (:host github
@@ -760,6 +764,7 @@ Problem with =magit-rebase= menu caused by unsupported =project.el= in =emacs v.
 #+end_src
 
 **** Shows TODOs (magit-todos)
+***** Git-Timemachine
 
 ***** Configuration
 #+begin_src emacs-lisp
@@ -769,22 +774,21 @@ Problem with =magit-rebase= menu caused by unsupported =project.el= in =emacs v.
     (magit-mode . (lambda () (magit-todos-mode))))
 #+end_src
 
-**** Git-Timemachine
 
-***** Configuration
+****** Configuration
 #+begin_src emacs-lisp
   (use-package! git-timemachine
     :after magit)
 #+end_src
 
-***** Installation
+****** Installation
 #+begin_src emacs-lisp :tangle packages.el
   (package! git-timemachine)
 #+end_src
 
-**** Open Code in Remote (browse-at-remote)
+***** Open Code in Remote (browse-at-remote)
 
-***** Configuration
+****** Configuration
 #+begin_src emacs-lisp
   (use-package! browse-at-remote
     :commands
@@ -795,32 +799,32 @@ Problem with =magit-rebase= menu caused by unsupported =project.el= in =emacs v.
       (kbd "g D") #'browse-at-remote))
 #+end_src
 
-**** Git-Gutter-Fringe
+***** Git-Gutter-Fringe
 Show changes in gutter fringe
 
-***** Configuration
+****** Configuration
 #+begin_src emacs-lisp
   (use-package! git-gutter-fringe
     :hook
     (prog-mode . (lambda () (git-gutter-mode))))
 #+end_src
 
-**** Git-messenger
+***** Git-messenger
 
-***** Installation
+****** Installation
 #+begin_src emacs-lisp :tangle packages.el
   (package! git-messenger)
 #+end_src
 
-***** Configuration
+****** Configuration
 #+begin_src emacs-lisp
   (use-package! git-messenger
     :commands (git-messenger:popup-message))
 #+end_src
 
-** Completion (company)
+*** COMMENT Completion (company)
 
-*** Configuration
+**** Configuration
 #+begin_src emacs-lisp
   (use-package! company
     :after lsp-mode
@@ -843,20 +847,19 @@ Show changes in gutter fringe
                              ;; company-oddmuse company-dabbrev))
 #+end_src
 
-*** Expansions
+**** Expansions
 
-**** Sorting Completions (company-prescient)
+***** Sorting Completions (company-prescient)
 
-***** Configuration
+****** Configuration
 #+begin_src emacs-lisp
   (use-package! company-prescient
     :requires (prescient)
     :hook (company-mode . (lambda () (company-prescient-mode))))
 #+end_src
 
-**** Dictionary
 
-***** Configuration
+****** Configuration
 #+begin_src emacs-lisp
   (use-package! company-dict
     :config
@@ -864,14 +867,14 @@ Show changes in gutter fringe
     )
 #+end_src
 
-**** Org-Block (company-org-block)
+***** Org-Block (company-org-block)
 
-***** Installation
+****** Installation
 #+begin_src emacs-lisp :tangle packages.el
   (package! company-org-block)
 #+end_src
 
-***** Configuration
+****** Configuration
 #+begin_src emacs-lisp
   (use-package! company-org-block
     :after org
@@ -880,9 +883,9 @@ Show changes in gutter fringe
     )
 #+end_src
 
-**** Company Math-Latex
+***** Company Math-Latex
 
-***** Installation
+****** Installation
 #+begin_src emacs-lisp :tangle packages.el
   (package! company-math :recipe
           (:type git
@@ -890,7 +893,7 @@ Show changes in gutter fringe
            :repo "vspinu/company-math"))
 #+end_src
 
-***** Configuration
+****** Configuration
 #+begin_src emacs-lisp
   (use-package! company-math
     :after company)
@@ -898,7 +901,7 @@ Show changes in gutter fringe
 
 **** COMMENT Tabnine Integration
 
-***** Configuration
+****** Configuration
 #+begin_src emacs-lisp
   (use-package! company-tabnine
     :after company
@@ -929,7 +932,7 @@ Show changes in gutter fringe
   ;;   "d" '(dap-hydra t :wk "debugger")))
 #+end_src
 
-** Terminal (vterm)
+*** Terminal (vterm)
 
 *** Configurations
 #+begin_src emacs-lisp
@@ -938,11 +941,11 @@ Show changes in gutter fringe
     ;; :bind ("C-c v" . vterm-other-window))
 #+end_src
 
-*** Extensions
+**** Extensions
 
-**** Multi-Vterm
+***** Multi-Vterm
 
-***** Installation
+****** Installation
 #+begin_src emacs-lisp :tangle packages.el
   (package! multi-vterm)
 #+end_src
@@ -994,10 +997,11 @@ Show changes in gutter fringe
     :defer t
     :custom (minimap-window-location 'right))
 #+end_src
+*** Editing Comments
 
-** Commenter (evil-nerd-commenter)
+**** Commenter (evil-nerd-commenter)
 
-*** Configuration
+***** Configuration
 #+begin_src emacs-lisp
   (use-package! evil-nerd-commenter)
     ;; :bind ("M-/" . evilnc-comment-or-uncomment-lines))
@@ -1086,8 +1090,7 @@ Show changes in gutter fringe
 #+end_src
 
 ** Number Highlighter
-
-*** Configuration
+***** Configuration
 #+begin_src emacs-lisp
   (use-package! highlight-numbers
     :hook
@@ -1241,14 +1244,14 @@ Show changes in gutter fringe
     (add-to-list 'auto-mode-alist '("/nginx/sites-\\(?:available\\|enabled\\)/" . nginx-mode)))
 #+end_src
 
-*** Company Integration
+*** COMMENT Company Integration
 
-*** Installation
+**** Installation
 #+begin_src emacs-lisp :tangle packages.el
   (package! company-nginx)
 #+end_src
 
-*** Configuration
+**** Configuration
 #+begin_src emacs-lisp
   (use-package! company-nginx
     :hook (nginx-mode . (lambda () (add-to-list 'company-backends #'company-nginx))))
@@ -1265,7 +1268,7 @@ Show changes in gutter fringe
      (terraform-mode . (lambda () (lsp-deferred)))))
 #+end_src
 
-*** Company Support
+*** COMMENT Company Support
 #+begin_src emacs-lisp
   (use-package! company-terraform
     :after terraform-mode
@@ -1549,7 +1552,7 @@ Handling file properties for ‘LAST_MODIFIED’
     (run-at-time nil nil #'org-appear--set-elements))
 #+end_src
 
-**** Better Table
+**** COMMENT Better Table
 ***** Installation
 #+begin_src emacs-lisp :tangle packages.el
 (package! org-pretty-table :recipe (:host github :repo "Fuco1/org-pretty-table"))
@@ -1561,7 +1564,7 @@ Handling file properties for ‘LAST_MODIFIED’
     :hook (org-mode . (lambda() (org-pretty-table-mode))))
 #+end_src
 
-**** Superstar
+**** COMMENT Superstar
 #+begin_src emacs-lisp
   (use-package! org-superstar
     :hook (org-mode . (lambda () (org-superstar-mode)))
@@ -1581,7 +1584,9 @@ Handling file properties for ‘LAST_MODIFIED’
             ("DROP" . 61532)
             ("FNSHED" . 61533))))
 #+end_src
-**** Contents Outline Map
+
+**** COMMENT Contents Outline Map
+I decided to disable this for now as the package seems no longer maintained and ~treemacs v3~ update broke it.
 
 ***** Installation
 #+begin_src emacs-lisp :tangle packages.el
@@ -1792,7 +1797,7 @@ Since org-agenda is a part of org-mode functionality I use =with-eval-after-load
 
 #+end_src
 
-**** COMMENT Keybinding
+**** Keybinding
 Adding ~j~ and ~k~ to move up and down
 #+begin_src emacs-lisp
   (after! org-agenda
