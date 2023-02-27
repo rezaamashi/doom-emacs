@@ -21,10 +21,14 @@ Ensure that we have the latest compat package
            :files ("*.el")))
 #+end_src
 
-** Log level
+** Log level and Debugging
 I set the log warning level to higher since =org-element= keep throwing warning in =org-roam=
 #+begin_src emacs-lisp
 (setq! log-warning-minimum-level :error) ;;default :warning
+
+;; Enable debugging for more information on the error
+(map! :leader
+      :desc "Toggle debug on error" "d" #'toggle-debug-on-error)
 #+end_src
 
 ** Bookmark Saving Configuration
