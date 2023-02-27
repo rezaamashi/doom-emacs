@@ -203,8 +203,22 @@ I use ~theme.el~ so that emacs theme could be uniformly riced with the rest of m
 (load-file (expand-file-name "elisp/theme.el" doom-private-dir))
 #+end_src
 
+*** Extra Themes
+
+**** Catppuccin
+***** Installation
+#+begin_src emacs-lisp :tangle packages.el
+(package! catppuccin-theme
+  :recipe (:host github
+           :repo "catppuccin/emacs"))
 #+end_src
 
+***** Configuration
+#+begin_src emacs-lisp
+(use-package! catppuccin-theme
+  :config
+  (setq catppuccin-flavor 'frappe)) ;; frappe, latte, macchiato, and mocha
+#+end_src
 ** Time Display Configuration
 #+begin_src emacs-lisp
 (setq display-time-24hr-format t)
