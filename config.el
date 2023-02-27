@@ -1596,8 +1596,15 @@
     (setq org-randomnote-candidates
           (find-lisp-find-files org_journal "\.org$")))
 
-  (use-package! ivy-bibtex
-    :commands ivy-bibtex)
+;; [[file:config.org::*Keybinding][Keybinding:1]]
+(map! :map org-export-stack-mode-map
+      :ne "RET" #'org-export-stack-view)
+;; Keybinding:1 ends here
+
+;; [[file:config.org::*Configuration][Configuration:1]]
+(after! org
+  (setq org-export-async-init-file (expand-file-name "elisp/ox-init.el" doom-private-dir)))
+;; Configuration:1 ends here
 
   (defun rz/org-mode-visual-fill ()
     (setq visual-fill-column-width 100

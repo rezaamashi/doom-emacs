@@ -2813,18 +2813,31 @@ To open random journal entry
 #+end_src
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 **** Configuration
+=======
+*** Keybinding
+this setup keybinding for ~Org Export Stack~
+>>>>>>> 44fb64f (refactor(org-async-export): Set keybinding and init file)
 #+begin_src emacs-lisp
-  (use-package! ivy-bibtex
-    :commands ivy-bibtex)
+(map! :map org-export-stack-mode-map
+      :ne "RET" #'org-export-stack-view)
 #+end_src
 
+<<<<<<< HEAD
 =======
 **** With Straight.el
 #+begin_src emacs-lisp  :tangle ./elisp/ox-init.el :mkdirp yes
 ;;; ox-init.el -*- lexical-binding: t; -*-
 ; This is minimal configuration for asynchronous exporting for org files, edit on
 ; `../config.org'
+=======
+*** Configuration
+#+begin_src emacs-lisp
+(after! org
+  (setq org-export-async-init-file (expand-file-name "elisp/ox-init.el" doom-private-dir)))
+#+end_src
+>>>>>>> 44fb64f (refactor(org-async-export): Set keybinding and init file)
 
 (setq-default user-emacs-directory (concat (getenv "HOME") "/.config/chemacs/dotemacsen/doom/"))
 (setq-default doom-private-dir (concat (getenv "HOME") "/.config/doom/"))
