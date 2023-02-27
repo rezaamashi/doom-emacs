@@ -20,9 +20,10 @@
   (defvar org_noter (concat (getenv "HOME") "/org/roam/noter"))
   (defvar org_roam (concat (getenv "HOME") "/org/roam/"))
   (defvar bib_notes (concat (getenv "HOME") "/org/roam/bib_notes/bib_notes.org"))
-  (defvar bib_files '("~/Documents/Reza/BibTex/Zotero-mylib/CalibreBib.bib"
-                      "~/Documents/Reza/BibTex/Zotero-mylib/Zotero-mylib.bib"))
-  (defvar zot_col (concat (getenv "HOME") "/Documents/Reza/BibTex/Zotero-mylib/files/Input"))
+  (defvar bib_dir (concat (getenv "HOME") "/Documents/Reza/BibTex/Zotero-mylib/"))
+  (defvar bib_files `(,(concat bib_dir "CalibreBib.bib")
+                      ,(concat bib_dir "Zotero-mylib.bib")))
+  (defvar zot_col (concat bib_dir "files/Input"))
 ;; Zettelkasten Setup:1 ends here
 
 ;; [[file:../config.org::*Project Directory][Project Directory:1]]
