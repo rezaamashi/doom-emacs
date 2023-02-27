@@ -198,10 +198,11 @@ This config is needed to load faces when emacs is running in daemon
 #+end_src
 
 ** Theme
+I use ~theme.el~ so that emacs theme could be uniformly riced with the rest of my WM.
 #+begin_src emacs-lisp
-;; (setq doom-theme 'doom-challenger-deep)
-;; (setq doom-theme 'doom-solarized-light)
-(setq doom-theme 'doom-city-lights)
+(load-file (expand-file-name "elisp/theme.el" doom-private-dir))
+#+end_src
+
 #+end_src
 
 ** Time Display Configuration
