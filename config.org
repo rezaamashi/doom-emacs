@@ -38,9 +38,30 @@ Set up emacs to save bookmark on every modification of =bookmark-alist=
 #+end_src
 
 * User Credentials
+** Open video url in MPV
+This is taken from [[https://gist.github.com/bsless/19ca4a37eee828b1b62c84971181f506][Opening YouTube Links In MPV from Emacs · GitHub]]
 #+begin_src emacs-lisp
 (setq user-full-name "Reza A'masyi"
       user-mail-address "mnurrreza@gmail.com")
+(defun rz/mpv-play-url (url &rest args)
+  "Play video url using `mpv' with `yt-dlp'"
+  (interactive)
+  (start-process "mpv" nil "mpv" url))
+
+(setq browse-url-browser-function
+    '(("youtu\\.?be" . rz/mpv-play-url)
+      ("www\\.youtube\\.com" . rz/mpv-play-url)
+      ("." . browse-url-default-browser)))
+#+end_src
+
+** COMMENT Macro to set up ~setq~ differently in wayland and x11
+This macro still not working the way how I want it to be
+#+begin_src emacs-lisp
+(defmacro rz/setq-display (var val-wayland val-x11)
+  "Allow user to specifically `setq' variables for specific display"
+  `(setq ,var (if (string-equal (getenv "XDG_SESSION_TYPE") "wayland")
+                 ,val-wayland
+                 ,val-x11)))
 #+end_src
 
 * Workflows Variables
