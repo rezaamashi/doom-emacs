@@ -36,25 +36,14 @@ Set up emacs to save bookmark on every modification of =bookmark-alist=
 #+begin_src emacs-lisp
 (setq bookmark-save-flag 1)
 #+end_src
-
-** Open video url in MPV
-This is taken from [[https://gist.github.com/bsless/19ca4a37eee828b1b62c84971181f506][Opening YouTube Links In MPV from Emacs · GitHub]]
 ** Use already created ~custom-file~
 This is taken from [[https://tecosaur.github.io/emacs-config/config.html#auto-customisations][tecosaur/Doom Emacs Configuration]]. I need to set this up here so that I won't need to recreate the custom and bind variables every time I reload a session. Make sure to have a safe callables and variables as it will be ran every time.
 #+begin_src emacs-lisp
-(defun rz/mpv-play-url (url &rest args)
-  "Play video url using `mpv' with `yt-dlp'"
-  (interactive)
-  (start-process "mpv" nil "mpv" url))
 (setq-default custom-file (expand-file-name "custom.el" doom-private-dir))
 (when (file-exists-p custom-file)
   (load custom-file))
 #+end_src
 
-(setq browse-url-browser-function
-    '(("youtu\\.?be" . rz/mpv-play-url)
-      ("www\\.youtube\\.com" . rz/mpv-play-url)
-      ("." . browse-url-default-browser)))
 #+end_src
 
 ** COMMENT Macro to set up ~setq~ differently in wayland and x11
@@ -2674,6 +2663,15 @@ By @nobiot, Transcluding between files using Org-ID
      org-noter-hide-other nil
      ;; Everything is relative to the main notes file
      org-noter-notes-search-path (list org_noter))
+****** Open video url in MPV
+This is taken from [[https://gist.github.com/bsless/19ca4a37eee828b1b62c84971181f506][Opening YouTube Links In MPV from Emacs · GitHub]]
+#+begin_src emacs-lisp
+(defun rz/mpv-play-url (video-url &rest args)
+  "Play video url using `mpv' with `org-media-note' and `yt-dlp'"
+  (interactive)
+  ;; (start-process "mpv" nil "mpv" url))
+  (org-media-note--mpv-play-online-video video-url))
+
 
 *** Anki Integration
 
