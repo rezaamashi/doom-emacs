@@ -6,6 +6,7 @@
 ;; [[file:../config.org::*Org Mode Features][Org Mode Features:1]]
   (defvar org_file_dir (concat (getenv "HOME") "/org/"))
   (defvar org_agenda_dir (concat (getenv "HOME") "/org/Orgzly/"))
+  (defvar org_images_dir (concat org_file_dir "images/"))
 
 ;; Org journal weekly review
   (defvar org_journal_weekly_dir (concat (getenv "HOME") "/org/journals/weekly/"))
@@ -20,9 +21,10 @@
   (defvar org_noter (concat (getenv "HOME") "/org/roam/noter"))
   (defvar org_roam (concat (getenv "HOME") "/org/roam/"))
   (defvar bib_notes (concat (getenv "HOME") "/org/roam/bib_notes/bib_notes.org"))
-  (defvar bib_dir (concat (getenv "HOME") "/Documents/Reza/BibTex/Zotero-mylib/"))
-  (defvar bib_files `(,(concat bib_dir "CalibreBib.bib")
-                      ,(concat bib_dir "Zotero-mylib.bib")))
+  (defvar bib_dir (concat (getenv "HOME") "/Documents/Reza/BibTeX/"))
+  (defvar bib_files `(,(concat bib_dir "Calibre-Catalog.bib")
+                      ,(concat bib_dir "Zotero-General.bib")
+                      ,(concat bib_dir "Zotero-UndThes.bib")))
   (defvar zot_col (concat bib_dir "files/Input"))
 ;; Zettelkasten Setup:1 ends here
 
