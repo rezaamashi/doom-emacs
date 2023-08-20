@@ -21,12 +21,13 @@ After reading this %^{entry-type}, I get that...
 :CUSTOM_ID: %^{citekey}
 :NOTER_DOCUMENT: %^{file}
 :AUTHOR: %^{author-or-editor}
-:JOURNAL: %^{journal}
+:JOURNAL: %^{journaltitle}
 :PUBLISHER: %^{publisher}
 :VOLUME: %^{volume}
 :PAGES: %^{pages}
-:YEAR: %^{year}
+:DATE: %^{date}
 :DOI: %^{doi}
 :ISSN: %^{issn}
 :URL: %^{url}
+:ACCESSED: %^{urldate}
 :END:

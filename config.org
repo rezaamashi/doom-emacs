@@ -2418,7 +2418,7 @@ This is executed in ~hydra/roam~ through ~SPC-n-r-p~
   (after! org-roam
     (setq orb-file-field-extensions '("pdf" "epub" "djvu" "mobi" "azw3"))
     (setq orb-preformat-keywords
-          '(("citekey" . "=key=") "title" "cover" "url" "tags" "date" "abstract" "year" "journal" "note" "volume" "pages" "doi" "isbn" "issn" "publisher" "file" "author-or-editor" "keywords"))
+          '(("citekey" . "=key=") ("entry-type" . "=type=") "title" "cover" "url" "urldate" "tags" "date" "abstract"  "year" "journaltitle" "note" "volume" "pages" "doi" "isbn" "issn" "publisher" "file" "author-or-editor" "keywords"))
     (setq org-roam-capture-templates
             '(("d" "default" plain
                (file "~/.config/chemacs/dotemacsen/Reza/orgtemplates/roamDefault.org")
