@@ -1,6 +1,7 @@
 #+CREATED: %U
 #+LAST_MODIFIED: %U
 #+STARTUP: content
+#+ANKI_DECK: Incremental Reading::%^{citekey}
 #+FILETAGS: :RefNotes:%^{entry-type}:
 
 - tags :: %^{tags}

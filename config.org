@@ -2667,8 +2667,36 @@ By @nobiot, Transcluding between files using Org-ID
      ;; Everything is relative to the main notes file
      org-noter-notes-search-path (list org_noter))
 
-    (evil-define-key 'normal org-noter-notes-mode-map (kbd "S <tab>") 'org-noter-sync-current-note))
+*** Anki Integration
 
+**** Installation
+#+begin_src emacs-lisp :tangle packages.el
+(package! org-anki
+  :recipe (:host github
+           :repo "eyeinsky/org-anki"))
+#+end_src
+
+**** Configuration
+#+begin_src emacs-lisp
+(use-package! org-anki
+  :init (setq org-anki-default-deck "Bank::org-inbox")
+  :commands (org-anki-sync-entry
+             org-anki-update-all
+             org-anki-delete-entry
+             org-anki-cloze-dwim
+             org-anki-browse-entry))
+#+end_src
+
+**** Keybinding
+#+begin_src emacs-lisp
+(map! :map org-mode-map
+      :localleader
+      (:prefix ("j" . "org-anki")
+       :desc "sync-entry" "j" #'org-anki-sync-entry
+       :desc "update-all" "J" #'org-anki-update-all
+       :desc "delete-entry" "D" #'org-anki-delete-entry
+       :desc "cloze-dwim" "c" #'org-anki-cloze-dwim
+       :desc "browse-entry-at-point" "o" #'org-anki-browse-entry))
 #+end_src
 
 *** Journal
@@ -3875,6 +3903,38 @@ Configuration taken from [[https://kitchingroup.cheme.cmu.edu/blog/2016/10/29/Se
     (setq twittering-use-master-password t
           twittering-cert-file "/etc/ssl/certs/ca-certificates.crt"
           twittering-icon-mode t))
+#+end_src
+
+* Anki Client
+
+** Installation
+#+begin_src emacs-lisp :tangle packages.el
+(package! anki
+  :recipe (:host github
+           :repo "chenyanming/anki.el"))
+#+end_src
+
+** Configuration
+#+begin_src emacs-lisp
+(use-package! anki
+  :commands (anki anki-browser anki-list-decks)
+  :init
+  (add-hook! 'anki-mode-hook #'shrface-mode)
+  (add-hook! 'anki-card-mode-hook #'shrface-mode)
+  (autoload 'anki "anki")
+  (autoload 'anki-browser "anki")
+  (autoload 'anki-list-decks "anki")
+  (map! :leader
+        (:prefix ("aa" . "Anki")
+         :desc "Open Anki client" "a" #'anki
+         :desc "Browse Anki decks" "b" #'anki-browser
+         :desc "List Anki decks" "l" #'anki-list-decks))
+  :config
+  ;; (require 'shrface) ; If you use shrface, require it here
+  (setq anki-shr-rendering-functions (append anki-shr-rendering-functions shr-external-rendering-functions))
+  (setq sql-sqlite-program "/usr/bin/sqlite3")
+  ;; Set up the collection directory, which should contain a file - collection.anki2 and a folder - collection.media
+  (setq anki-collection-dir (concat (getenv "XDG_DATA_HOME") "/Anki2/Reza")))
 #+end_src
 
 * File Explorer

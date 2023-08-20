@@ -1,8 +1,10 @@
 #+CREATED: %U
 #+LAST_MODIFIED: %U
 #+STARTUP: content
+#+ANKI_DECK: Incremental Reading::%^{citekey}
 #+FILETAGS: :litNotes:Web:
 
+- source :: ${ref}
 - keywords :: %?
 - related ::
 
