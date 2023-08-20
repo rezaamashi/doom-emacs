@@ -21,6 +21,18 @@ Ensure that we have the latest compat package
            :files ("*.el")))
 #+end_src
 
+** Fix straight update on native-comp per Emacs 29
+There was problem with ~native-comp-deferred-compilation-deny-list~ being deprecated for emacs 29. Instead ~native-comp-jit-compilation-deny-list~ is should be the one used. The old ~straight.el~  that was being pinned by doom is yet to implement that update.
+#+begin_src emacs-lisp :tangle packages.el
+(unpin! straight)
+(package! straight
+  :type 'core
+  :recipe (:host github
+           :repo "radian-software/straight.el"
+           :local-repo "straight.el"
+           :files ("straight*.el")))
+#+end_src
+
 ** Log level and Debugging
 I set the log warning level to higher since =org-element= keep throwing warning in =org-roam=
 #+begin_src emacs-lisp
