@@ -1980,120 +1980,198 @@ Adding ~j~ and ~k~ to move up and down
 
 ***** Templates
 #+begin_src emacs-lisp
-  (after! org-capture
-      (setq org-capture-templates
-          ;; Tasks
-        `(("t" "Tasks / Projects")
-          ("tt" "Today" entry (file+olp ,(concat org_agenda "next.org") "Next Actions")
-           "* NEXT %?\nSCHEDULED:%^T  %U\n  %a\n  %i" :empty-lines 1)
-          ("td" "Today Deadline" entry (file ,(concat org_agenda "next.org") "Next Actions")
-           "* TODO %? \nDEADLINE: %^T\n %U" :empty-lines 1)
-          ("ts" "Inbox Scheduled" entry (file+olp ,(concat org_agenda "inbox.org") "Tasks")
-           "* TODO %?\nSCHEDULED:%^T  %U\n  %a\n  %i" :empty-lines 1)
-          ("tD" "Inbox Deadline" entry (file ,(concat org_agenda "inbox.org") "Tasks")
-           "* TODO %? \nDEADLINE: %^T\n %U" :empty-lines 1)
-          ("tw" "Wait deadline" entry (file+olp ,(concat org_agenda "waiting.org") "Waiting For")
-           "* WAIT %? From _%^{Delegated To}_ \nDEADLINE: %^T\n %U\n %a" :empty-lines 1)
+(load-file (expand-file-name "elisp/org-capture-templates.el" doom-private-dir))
+#+end_src
 
-          ;; Catchall for faster capture "SPC-x-x"
-          ("x" "Inbox" entry (file+olp ,(concat org_agenda "inbox.org") "Everything/Notes")
-           "* %? \n %U\n %a" :empty-lines 1)
+I need this to be in separate file as I share this with the dedicated capture daemon
+#+begin_src emacs-lisp :tangle elisp/org-capture-templates.el
+(with-eval-after-load 'org
+ (setq org-capture-templates
+     ;; Tasks
+   `(("t" "Tasks / Projects")
+     ("tt" "Today" entry (file+olp ,(concat org_agenda_dir "next.org") "Today's Tasks")
+      "* NEXT %?\nSCHEDULED:%^T  %U\n  %a\n  %i" :empty-lines 1)
+     ("td" "Today Deadline" entry (file+olp ,(concat org_agenda_dir "next.org") "Today's Tasks")
+      "* TODO %? \nDEADLINE: %^T\n %U" :empty-lines 1)
+     ("ts" "Inbox Scheduled" entry (file+olp ,(concat org_agenda_dir "inbox.org") "Tasks")
+      "* TODO %?\nSCHEDULED:%^T  %U\n  %a\n  %i" :empty-lines 1)
+     ("tD" "Inbox Deadline" entry (file+olp ,(concat org_agenda_dir "inbox.org") "Tasks")
+      "* TODO %? \nDEADLINE: %^T\n %U" :empty-lines 1)
+     ("tw" "Wait deadline" entry (file+olp ,(concat org_agenda_dir "waiting.org") "Waiting For")
+      "* WAIT %? From _%^{Delegated To}_ \nDEADLINE: %^T\n %U\n %a" :empty-lines 1)
 
-          ;; Events
-          ("e" "Event" entry (file ,(concat org_agenda "next.org"))
-           "* %? \n%^{Event}T\n %U\n %a" :empty-lines 1)
+     ;; Catchall for faster capture "SPC-x-x"
+     ("x" "Inbox" entry (file+olp ,(concat org_agenda_dir "inbox.org") "Everything/Notes")
+      "* %? \n %U\n %a" :empty-lines 1)
 
-          ;; Reading Lists
-          ("r" "Reading List" entry
-           (file+olp ,(concat org_agenda "reading_list.org") "Catchall")
-           "* RD %? \n%U\n%a" :empty-lines 1)
+     ;; Events
+     ("e" "Event" entry (file ,(concat org_agenda_dir "gcal/events.org"))
+      "* %?\n %U":empty-lines 1)
 
-          ;; Birthdays
-          ("b" "Birthdays")
-          ("br" "Relatives/Family" entry
-           (file+olp ,(concat org_agenda "birthdays/relatives.org") "Relatives")
-           "* %^{Who?} \n%^{Birthday}t\n%U" :empty-lines 1)
-          ("ba" "Acquintances" entry
-           (file+olp ,(concat org_agenda "birthdays/acquintances.org") "Acquintances")
-           "* %^{Who?} \n%^{Birthday}t\n%U" :empty-lines 1)
-          ("bf" "Friends" entry
-           (file+olp ,(concat org_agenda "birthdays/friends.org") "Friends")
-           "* %^{Who?} \n%^{Birthday}t\n%U" :empty-lines 1)
-          ("bo" "Others" entry
-           (file+olp ,(concat org_agenda "birthdays/others.org") "Others")
-           "* %^{Who?} \n%^{Birthday}t\n%U" :empty-lines 1)
+     ;; Reading Lists
+     ("r" "Reading List")
+     ("ra" "Article" entry
+      (file+olp ,(concat org_agenda_dir "reading_list.org") "Journal Article")
+      "* RD %? \n%U\n%a" :empty-lines 1)
+     ("rb" "Books" entry
+      (file+olp ,(concat org_agenda_dir "reading_list.org") "Books")
+      "* RD %? \n%U\n%a" :empty-lines 1)
 
-          ;; workflow
-          ("m" "Meeting" entry
-           (file+olp+datetree ,(concat org_file_dir "meetings.org") "Active")
-           "* %<%I:%M %p> - %a :meetings:\n\n%?\n\n"
-           :clock-in :clock-resume :empty-lines 1)
-          ("E" "Emails")
-          ("Er" "Read Later" entry
-           (file+olp ,(concat org_agenda "mail.org") "Read Later")
-           (file ,(concat doom-private-dir "orgtemplates/mailreadlater.org"))
-           :empty-lines 1 :immediate-finish t)
-          ("Ef" "Follow Up" entry (file+olp ,(concat org_agenda "mail.org") "Follow Up")
-           (file ,(concat doom-private-dir "orgtemplates/mailfollowup.org"))
-           :empty-lines 1 :immediate-finish t)
-          ("Es" "Send Mail" entry
-           (file+olp ,(concat org_agenda "mail.org") "Send Mail")
-           (file ,(concat doom-private-dir "orgtemplates/mailsendmail.org"))
-           :empty-lines 1 :immediate-finish t)
+     ;; Birthdays
+     ("b" "Birthdays")
+     ("br" "Relatives/Family" entry
+      (file+olp ,(concat org_agenda_dir "birthdays.org") "Relatives")
+      "* %^{Who?} \n%^{Birthday}t\n%U" :empty-lines 1 :immediate-finish 1)
+     ("ba" "Acquintances" entry
+      (file+olp ,(concat org_agenda_dir "birthdays.org") "Acquintances")
+      "* %^{Who?} \n%^{Birthday}t\n%U" :empty-lines 1 :immediate-finish 1)
+     ("bf" "Friends" entry
+      (file+olp ,(concat org_agenda_dir "birthdays.org") "Friends")
+      "* %^{Who?} \n%^{Birthday}t\n%U" :empty-lines 1 :immediate-finish 1)
+     ("bo" "Others" entry
+      (file+olp ,(concat org_agenda_dir "birthdays.org") "Others")
+      "* %^{Who?} \n%^{Birthday}t\n%U" :empty-lines 1 :immediate-finish 1)
 
-          ;; Tracking
-          ("M" "Metrics Capture")
-          ("Mw" "Weight" table-line
-           (file+headline ,(concat org_file_dir "weight.org") "Weight")
-           "| %U | %^{Weight} | %^{Notes} |" :immediate-finish t)
-          ("Mp" "PE" table-line
-           (file+headline ,(concat org_agenda "pe.org") "Measurements")
-           "| %U | %^{BPEL} | %^{EG} | %^{NBPEL} | %^{BPFSL} |"
-           :immediate-finish t)
-          ("Ml" "Lead Managements" table-line
-           (file+headline "~/Videos/Intergender Dynamic/Occam's Razor - Ultimate Seduction System/Template For Managing Leads/Template for Managing Leads.org" "Leads")
-           "| %U | %^{Girl Name} | %^{Date Time}T | %^{Had Sex?} | %^{Repeat?} | %^{Source (Daygame, Nightgame, Onlinegame, Else)} | %^{Description} | %^{Next Actions} |"
-           :immediate-finish t)
+     ;; workflow
+     ("m" "Meeting" entry
+      (file+olp+datetree ,(concat org_file_dir "meetings.org") "Active")
+      "* %<%I:%M %p> - %a :meetings:\n\n%?\n\n"
+      :clock-in :clock-resume :empty-lines 1)
+     ("E" "Emails")
+     ("Er" "Read Later" entry
+      (file+olp ,(concat org_agenda_dir "mail.org") "Read Later")
+      (file ,(concat doom-private-dir "orgtemplates/mailreadlater.org"))
+      :empty-lines 1 :immediate-finish t)
+     ("Ef" "Follow Up" entry (file+olp ,(concat org_agenda_dir "mail.org") "Follow Up")
+      (file ,(concat doom-private-dir "orgtemplates/mailfollowup.org"))
+      :empty-lines 1 :immediate-finish t)
+     ("Es" "Send Mail" entry
+      (file+olp ,(concat org_agenda_dir "mail.org") "Compose Mail")
+      (file ,(concat doom-private-dir "orgtemplates/mailsendmail.org"))
+      :empty-lines 1 :immediate-finish t)
 
-          ;; Journal
-          ("j" "Journal Entries")
-          ("jj" "Journal Entry" entry
-           (function rz/org-journal-find-location)
-           "\n** %<%I:%M %p> - %? :journal:\n" :empty-lines 1)
-          ("js" "Scheduled Journal" entry
-           (function org-journal-date-location)
-           "* TODO %?\n <%(princ org-journal--date-location-scheduled-time)>\n"
-           :empty-lines 1)
-          ("jm" "Morning Journal entry" entry
-           (function rz/org-journal-find-location)
-           (file ,(concat doom-private-dir "orgtemplates/morningroutine.org"))
-           :empty-lines 1 :jump-to-captured t)
-          ("jn" "Night Journal entry" entry
-           (function rz/org-journal-find-location)
-           (file ,(concat doom-private-dir "orgtemplates/nightroutine.org"))
-           :empty-lines 1 :jump-to-captured t)
-          ("jw" "Weekly Review" entry
-           (function rz/org-journal-find-location)
-           (file ,(concat doom-private-dir "orgtemplates/weeklyreview.org"))
-           :empty-lines 1 :jump-to-captured t)
+     ;; Tracking
+     ("M" "Metrics Capture")
+     ("Mw" "Weight" table-line
+      (file+headline ,(concat org_file_dir "weight.org") "Weight")
+      "| %U | %^{Weight} | %^{Notes} |" :immediate-finish t)
+     ("Mp" "PE" table-line
+      (file+headline ,(concat org_agenda_dir "pe.org") "Measurements")
+      "| %U | %^{BPEL} | %^{EG} | %^{NBPEL} | %^{BPFSL} |"
+      :immediate-finish t)
+     ("Ml" "Lead Managements" table-line
+      (file+headline "~/Videos/Intergender Dynamic/Occam's Razor - Ultimate Seduction System/Template For Managing Leads/Template for Managing Leads.org" "Leads")
+      "| %U | %^{Girl Name} | %^{Date Time}T | %^{Had Sex?} | %^{Repeat?} | %^{Source (Daygame, Nightgame, Onlinegame, Else)} | %^{Description} | %^{Next Actions} |"
+      :immediate-finish t)
 
-          ;; Cookbook
-          ("c" "Cookbook")
-          ("cc" "Web Fetch" entry (file "~/org/cookbook.org")
-           "%(org-chef-get-recipe-from-url)"
-           :empty-lines 1)
-          ("cm" "Manual Cookbook" entry (file ,(concat org_file_dir "cookbook.org"))
-           "* %^{Recipe title: }\n:PROPERTIES:\n  :source-url:\n  :servings:\n  :prep-time:\n  :cook-time:\n  :ready-in:\n  :END:\n** Ingredients\n   %?\n** Directions\n\n")
+     ;; Journal
+     ("j" "Journal Entries")
+     ("jj" "Journal Entry" entry
+      (function rz/org-journal-find-location)
+      "\n** %<%I:%M %p> - %? :journal:\n" :empty-lines 1)
+     ("js" "Scheduled Journal" entry
+      (function rz/org-journal-date-location)
+      "* TODO %?\n <%(princ org-journal--date-location-scheduled-time)>\n"
+      :empty-lines 1)
+     ("jm" "Morning Journal entry" entry
+      (function rz/org-journal-find-location)
+      (file ,(concat doom-private-dir "orgtemplates/morningroutine.org"))
+      :empty-lines 1 :jump-to-captured t)
+     ("jn" "Night Journal entry" entry
+      (function rz/org-journal-find-location)
+      (file ,(concat doom-private-dir "orgtemplates/nightroutine.org"))
+      :empty-lines 1 :jump-to-captured t)
+     ("jw" "Weekly Review" entry
+      (file ,(concat org_journal_weekly_dir "2022.org"))
+      (file ,(concat doom-private-dir "orgtemplates/weeklyreview.org"))
+      :empty-lines 1 :jump-to-captured t)
 
-          ;; Protocol
-          ("Q" "Protocol Quote" entry (file+olp ,(concat org_agenda "inbox.org") "Web Quote")
-           "* %^{Quote From}\n:PROPERTIES:\nSOURCE: %:annotation\nCREATED_AT:%u\n:END:\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n%?"
-           :prepend t
-           :kill-buffer t)
-          ("L" "Protocol Link" entry (file+olp ,(concat org_agenda "reading_list.org") "Web")
-           "* RD [[%:link][%:description]]\n%? "
-           :prepend t
-           :kill-buffer t))))
+     ;; Cookbook
+     ("c" "Cookbook")
+     ("cc" "Web Fetch" entry (file "~/org/cookbook.org")
+      "%(org-chef-get-recipe-from-url)"
+      :empty-lines 1)
+     ("cm" "Manual Cookbook" entry (file ,(concat org_file_dir "cookbook.org"))
+      "* %^{Recipe title: }\n:PROPERTIES:\n  :source-url:\n  :servings:\n  :prep-time:\n  :cook-time:\n  :ready-in:\n  :END:\n** Ingredients\n   %?\n** Directions\n\n")
+
+     ;; Protocol
+     ("Q" "[pro] Web Quote" entry (file+olp ,(concat org_agenda_dir "inbox.org") "Web Quote")
+      "* %^{Quote from/Who said this}\n:PROPERTIES:\n:SOURCE: %:annotation\n:CREATED_AT: %U\n:END:\n#+BEGIN_QUOTE\n%i\n#+END_QUOTE\n%^{What do you think about this quote}"
+      :prepend t :empty-lines 1
+      :immediate-finish t)
+     ("L" "[pro] Web Link" entry (file+olp ,(concat org_agenda_dir "reading_list.org") "Web")
+      "* RD [[%:link][%:description]]\n%U\n%^{What is the gist of it} "
+      :prepend t :empty-lines 1
+      :immediate-finish t)
+     ("W" "[pro] Web Reading List" entry
+      (file+olp ,(concat org_agenda_dir "reading_list.org") "Web")
+      "* RD %? \n%U\n%a" :empty-lines 1))))
+#+end_src
+
+***** Org Protocol Capture Setup
+Setup these bookmarklet on your Browser
+#+begin_src javascript :tangle no
+// Web Quote: I name this Bookmarklet as "Org: Save Quote"
+javascript:location.href='org-protocol://capture://Q/'+
+      encodeURIComponent(location.href)+'/'+
+      encodeURIComponent(document.title)+'/'+
+      encodeURIComponent(window.getSelection())
+
+// Web Link: I name this Bookmarklet as "Org: Read Later"
+javascript:location.href='org-protocol://capture://R/'+
+      encodeURIComponent(location.href)+'/'+
+      encodeURIComponent(document.title)+'/'
+
+// For copying webpage link to emacs, saved as "Org: Copy Page Link"
+javascript:location.href='org-protocol://store-link://'+
+      encodeURIComponent(location.href)
+#+end_src
+
+Make sure to set up ~org-protocol.desktop~ file in your ~~/.local/share/applications~ or ~/etc/share/applications~ with this input
+#+begin_src conf :tangle no
+[Desktop Entry]
+Name=Org-Protocol
+Exec=emacsclient %u
+Type=Application
+Icon=emacs
+Terminal=false
+Categories=System;
+MimeType=x-scheme-handler/org-protocol;
+#+end_src
+
+***** Customization for =org-capture bin=
+#+begin_src emacs-lisp
+(setf (alist-get 'height +org-capture-frame-parameters) 15)
+;; (alist-get 'name +org-capture-frame-parameters) "❖ Capture") ;; ATM hardcoded in other places, so changing breaks stuff
+(setq +org-capture-fn
+      (lambda ()
+        (interactive)
+        (set-window-parameter nil 'mode-line-format 'none)
+        (org-capture)))
+#+end_src
+***** Org Capture Frame
+#+begin_src emacs-lisp
+(defun rz/delete-capture-frame (&rest _)
+  "Delete frame with its name frame-parameter set to \" Capture\"."
+  (if (equal " Capture" (frame-parameter nil 'name))
+      (delete-frame)))
+
+(with-eval-after-load 'org
+ (advice-add 'org-capture-finalize :after #'rz/delete-capture-frame))
+
+(defun rz/org-capture-frame ()
+  "Run org-capture in its own frame."
+  (interactive)
+  (use-package! cl-lib)
+  (select-frame-by-name " Capture")
+  (delete-other-windows)
+  (cl-letf (((symbol-function 'switch-to-buffer-other-window) #'switch-to-buffer))
+    (condition-case err
+        (org-capture)
+      ;; "q" signals (error "Abort") in `org-capture'
+      ;; delete the newly created frame in this scenario.
+      (user-error (when (string= (cadr err) "Abort")
+                    (delete-frame))))))
 #+end_src
 
 **** Habit-plus
