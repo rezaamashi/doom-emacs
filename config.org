@@ -15,6 +15,7 @@ for more info).
 ** Fix for defvar-keymap provided by compat-29
 Ensure that we have the latest compat package
 #+begin_src emacs-lisp :tangle packages.el
+(unpin! compat)
 (package! compat
   :recipe (:host github
            :repo "emacs-compat/compat"
